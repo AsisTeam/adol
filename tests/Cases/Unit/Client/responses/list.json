@@ -1,0 +1,69 @@
+{
+  "maxCount": 1000,
+  "countSubjects": 2,
+  "records": [
+    {
+      "id": "108193",
+      "timeCreated": "24.12.2018 10:43",
+      "title": "Parcela 30 v K\u00da Blata",
+      "name": "",
+      "lv": 1187,
+      "status": "Aktivn\u00ed",
+      "estate": {
+        "typeEstate": "land",
+        "cadastralAreaCode": "708437",
+        "typeEvidence": "PKN",
+        "buildingLand": "1",
+        "kmenoveCislo": "30"
+      },
+      "owners": [
+        " Kucha\u0159 Miroslav  Pl\u00e1nick\u00e1 125, Klatovy V, 33901 Klatovy "
+      ],
+      "procedures": [],
+      "restricts": [],
+      "dataMd": {
+        "task": "url_parcela",
+        "ku": "708437",
+        "cislo": "30",
+        "typ": "PKN",
+        "zdroj": "",
+        "stavebni": "1"
+      },
+      "cadastralUrl": "",
+      "activeProcedures": [
+        ""
+      ],
+      "shortNotes": []
+    },
+    {
+      "id": "108216",
+      "timeCreated": "27.12.2018 13:53",
+      "title": "Budova \u010d.e.17 v obci Z\u00e1most\u00ed-Blata  (\u010d\u00e1st Blata)",
+      "name": "",
+      "lv": "",
+      "status": "Prob\u00edh\u00e1 ov\u011b\u0159ov\u00e1n\u00ed",
+      "estate": {
+        "typeEstate": "building",
+        "estateId": 297028604,
+        "villagePart": "146064",
+        "typeHomeNumber": 1,
+        "homeNumber": 17
+      },
+      "owners": [],
+      "procedures": [],
+      "restricts": [],
+      "dataMd": {
+        "task": "url_stavba",
+        "castObce": "146064",
+        "obec": "549193",
+        "ce": 17
+      },
+      "cadastralUrl": "http:\/\/abor.adol.cz\/adapter\/KatastrAdapter.html?typ=budova&id=297028604&hmac=6f0da7cc9c913fcc94ad8672b4b210d487cdbd9f",
+      "activeProcedures": [
+        ""
+      ],
+      "shortNotes": []
+    }
+  ],
+  "status": true
+}

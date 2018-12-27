@@ -1,0 +1,38 @@
+{
+  "record": {
+    "id": "108216",
+    "timeCreated": "27.12.2018",
+    "title": "Budova \u010d.e.17 v obci Z\u00e1most\u00ed-Blata  (\u010d\u00e1st Blata)",
+    "name": "",
+    "lv": "",
+    "status": "Prob\u00edh\u00e1 ov\u011b\u0159ov\u00e1n\u00ed",
+    "estate": {
+      "typeEstate": "building",
+      "estateId": 297028604,
+      "villagePart": "146064",
+      "typeHomeNumber": 1,
+      "homeNumber": 17
+    },
+    "owners": [],
+    "procedures": [],
+    "restricts": [],
+    "dataMd": {
+      "task": "url_stavba",
+      "castObce": "146064",
+      "obec": "549193",
+      "ce": 17
+    },
+    "cadastralUrl": "http:\/\/abor.adol.cz\/adapter\/KatastrAdapter.html?typ=budova&id=297028604&hmac=6f0da7cc9c913fcc94ad8672b4b210d487cdbd9f",
+    "activeProcedures": [
+      ""
+    ],
+    "shortNotes": [],
+    "isNew": true,
+    "villagePart": "Blata (146064)",
+    "city": "Z\u00e1most\u00ed-Blata",
+    "typeEstate": "",
+    "typeHomeNumber": "\u010d.e.",
+    "changes": []
+  },
+  "status": true
+}
