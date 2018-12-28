@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace AsisTeam\ADOL\Result\Property;
+namespace AsisTeam\ADOL\Result\Property\WatchDog;
 
 use AsisTeam\ADOL\Exception\InvalidArgumentException;
 use DateTimeImmutable;

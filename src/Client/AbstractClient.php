@@ -5,6 +5,7 @@ namespace AsisTeam\ADOL\Client;
 use AsisTeam\ADOL\Exception\RequestException;
 use AsisTeam\ADOL\Exception\ResponseException;
 use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
 use Throwable;
 
 abstract class AbstractClient
@@ -12,16 +13,21 @@ abstract class AbstractClient
 
 	protected const HOST = 'https://app.adol.cz';
 
-	/** @var Client */
-	private $client;
-
 	/** @var string */
 	private $token;
 
-	public function __construct(Client $client, string $token)
+	/** @var ClientInterface */
+	private $client;
+
+	public function __construct(string $token, ?ClientInterface $client = null)
 	{
-		$this->client = $client;
 		$this->token = $token;
+
+		if ($client === null) {
+			$client = new Client();
+		}
+
+		$this->client = $client;
 	}
 
 	/**

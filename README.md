@@ -29,6 +29,41 @@ composer require asisteam/adol
 
 ## Overview
 
-This package communicates with ADOL API and allows to perform CRUD calls for realty and property entities.
+This package communicates with ADOL API and allows to perform CRUD calls for realty, estate and insolvency entities.
 
+The `RequestException` is being thrown if request is invalid. The request will not be performed.
+`ResponseException` is thrown whenever request has been sent and response from adol server contains invalid status or misses some data.
 
+### API Hlídač nemovitostí - Property watch dog API
+
+To be used for registering properties to watch dog, removing from it and listing existing items.
+The `PropertyWatchDog` class should be used for communication with ADOL watch dog.
+It provides following methods:
+ - insert(IEstate $estate): Insertion
+ - list(int $page, ?int $limit = 10): Record[]
+ - detail(string $id): Record
+ - delete(string $id): void
+ 
+#### Usage
+
+```php
+// creating client is easy, just provide your auth token
+$client = new PropertyWatchDog('fillYourSecretTokenHere');
+
+// adding new property to watch dog
+$land = Land::create(549193, Estate::EVIDENCE_PKN, true, 5);
+// we can add more estate fields if we want to
+$land->name = 'some land name if available';
+$ins = $client->insert($land);
+$watchDogId = $ins->getId();
+
+// we can get the detail 'Adol\Result\Propety\WatchDog\Record' of property if we know it's id
+$record = $client->detail($watchDogId)
+
+// or we can list multiple records 'Adol\Result\Propety\WatchDog\Record' at once
+$records = $client->list(0, 100); // list form 0-100
+
+// to delete record from watch dog, just pass it's id to delete method
+$client->delete($watchDogId);
+
+```

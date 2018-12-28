@@ -2,26 +2,25 @@
 
 namespace AsisTeam\ADOL\Tests\Cases\Integration\Client;
 
-use AsisTeam\ADOL\Client\PropertyWatcher;
+use AsisTeam\ADOL\Client\PropertyWatchDog;
 use AsisTeam\ADOL\Entity\Estate;
 use AsisTeam\ADOL\Entity\Estate\Building;
 use AsisTeam\ADOL\Entity\Estate\Land;
-use GuzzleHttp\Client;
 use Tester\Assert;
 use Tester\Environment;
 use Tester\TestCase;
 
 require_once __DIR__ . '/../../../bootstrap.php';
 
-class PropertyWatcherTest extends TestCase
+class PropertyWatchDogTest extends TestCase
 {
 
-	/** @var PropertyWatcher */
+	/** @var PropertyWatchDog */
 	private $client;
 
 	public function setUp(): void
 	{
-		$this->client = new PropertyWatcher(new Client(), 'fill token here');
+		$this->client = new PropertyWatchDog('fill your token here');
 		Environment::skip('this test should be run manually (do not forget to fill valid token)');
 	}
 
@@ -64,4 +63,4 @@ class PropertyWatcherTest extends TestCase
 
 }
 
-(new PropertyWatcherTest())->run();
+(new PropertyWatchDogTest())->run();

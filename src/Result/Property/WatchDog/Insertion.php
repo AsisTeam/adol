@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace AsisTeam\ADOL\Result\Property;
+namespace AsisTeam\ADOL\Result\Property\WatchDog;
 
 final class Insertion
 {

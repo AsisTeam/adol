@@ -2,22 +2,17 @@
 
 namespace AsisTeam\ADOL\Tests\Cases\Unit\Client;
 
-use AsisTeam\ADOL\Client\PropertyWatcher;
+use AsisTeam\ADOL\Client\PropertyWatchDog;
 use AsisTeam\ADOL\Entity\Estate;
 use AsisTeam\ADOL\Entity\Estate\Building;
 use AsisTeam\ADOL\Entity\Estate\Land;
-use AsisTeam\ADOL\Result\Property\Record;
-use GuzzleHttp\Client;
-use Mockery;
-use Mockery\MockInterface;
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\StreamInterface;
+use AsisTeam\ADOL\Result\Property\WatchDog\Record;
 use Tester\Assert;
 use Tester\TestCase;
 
 require_once __DIR__ . '/../../../bootstrap.php';
 
-class PropertyWatcherTest extends TestCase
+class PropertyWatchDogTest extends TestCase
 {
 
 	/**
@@ -25,13 +20,13 @@ class PropertyWatcherTest extends TestCase
 	 */
 	public function testInsertError(): void
 	{
-		$client = new PropertyWatcher($this->createHttpMock('insert_error.json'), 'token');
+		$client = new PropertyWatchDog('token', Helpers::createHttpClientMock('insert_error.json'));
 		$client->insert(Land::create(549193, Estate::EVIDENCE_PKN, true, 5));
 	}
 
 	public function testInsertSuccessWithWarning(): void
 	{
-		$client = new PropertyWatcher($this->createHttpMock('insert.json'), 'token');
+		$client = new PropertyWatchDog('token', Helpers::createHttpClientMock('insert.json'));
 		$ins = $client->insert(Land::create(746118, Estate::EVIDENCE_PKN, true, 5));
 
 		Assert::equal('108193', $ins->getId());
@@ -43,7 +38,7 @@ class PropertyWatcherTest extends TestCase
 
 	public function testList(): void
 	{
-		$client = new PropertyWatcher($this->createHttpMock('list.json'), 'token');
+		$client = new PropertyWatchDog('token', Helpers::createHttpClientMock('list.json'));
 		$records = $client->list(0, 10);
 
 		Assert::count(2, $records);
@@ -67,39 +62,18 @@ class PropertyWatcherTest extends TestCase
 		Assert::true($records[0]->getEstate()->isBuildingLand());
 
 		// second record - same one is in detail call
-		$this->assertRecord($records[1]);
+		$this->assertRecord108216($records[1]);
 	}
 
 	public function testDetail(): void
 	{
-		$client = new PropertyWatcher($this->createHttpMock('detail.json'), 'token');
+		$client = new PropertyWatchDog('token', Helpers::createHttpClientMock('detail.json'));
 		$record = $client->detail('108216');
 
-		$this->assertRecord($record);
+		$this->assertRecord108216($record);
 	}
 
-	private function createHttpMock(string $file, int $statusCode = 200): Client
-	{
-		/** @var StreamInterface|MockInterface $body */
-		$body = Mockery::mock('StreamInterface')
-			->shouldReceive('getContents')->andReturn(file_get_contents(__DIR__ . '/responses/' . $file))->getMock();
-
-		/** @var ResponseInterface|MockInterface $response */
-		$response = Mockery::mock(ResponseInterface::class)
-			->shouldReceive('getStatusCode')->andReturn($statusCode)->getMock()
-			->shouldReceive('getBody')->andReturn($body)->getMock();
-
-		/** @var Client|MockInterface $client */
-		$client = Mockery::mock(Client::class)
-			->shouldReceive('request')
-			->andReturn($response)
-			->once()
-			->getMock();
-
-		return $client;
-	}
-
-	private function assertRecord(Record $record): void
+	private function assertRecord108216(Record $record): void
 	{
 		Assert::equal('108216', $record->getId());
 		Assert::equal('27.12.2018', $record->getTimeCreated()->format('j.m.Y'));
@@ -117,4 +91,4 @@ class PropertyWatcherTest extends TestCase
 
 }
 
-(new PropertyWatcherTest())->run();
+(new PropertyWatchDogTest())->run();

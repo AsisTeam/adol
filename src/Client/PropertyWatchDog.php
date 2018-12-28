@@ -5,10 +5,10 @@ namespace AsisTeam\ADOL\Client;
 use AsisTeam\ADOL\Entity\Estate\IEstate;
 use AsisTeam\ADOL\Exception\RequestException;
 use AsisTeam\ADOL\Exception\ResponseException;
-use AsisTeam\ADOL\Result\Property\Insertion;
-use AsisTeam\ADOL\Result\Property\Record;
+use AsisTeam\ADOL\Result\Property\WatchDog\Insertion;
+use AsisTeam\ADOL\Result\Property\WatchDog\Record;
 
-final class PropertyWatcher extends AbstractClient
+final class PropertyWatchDog extends AbstractClient
 {
 
 	private const API = '/papi/property-watchdog';
