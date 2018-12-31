@@ -2,7 +2,7 @@
 
 namespace AsisTeam\ADOL\Result\Property;
 
-use AsisTeam\ADOL\Entity\Site\Building;
+use AsisTeam\ADOL\Entity\Property\Building;
 use AsisTeam\ADOL\Exception\ResponseException;
 
 final class SiteBuildingsResult
@@ -14,6 +14,10 @@ final class SiteBuildingsResult
 	 */
 	public static function fromArray(int $requestedId, array $data): array
 	{
+		if ($data === []) {
+			return [];
+		}
+
 		if (!array_key_exists('parcelaId', $data) || $data['parcelaId'] !== $requestedId) {
 			throw new ResponseException('Returned parcelaId does not match requested id.');
 		}

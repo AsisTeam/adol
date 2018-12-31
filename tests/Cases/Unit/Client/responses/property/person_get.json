@@ -1,0 +1,47 @@
+{
+  "status": true,
+  "data": [
+    {
+      "id": "40952368010",
+      "nazev": null,
+      "adresa": "Boleslavova 415\/42, Nusle, 14000 Praha",
+      "adress": {
+        "ulice": "Boleslavova",
+        "cisloDomovni": "415",
+        "castObce": "Nusle",
+        "cisloOrientacni": "42",
+        "obec": "Praha",
+        "psc": "14000"
+      },
+      "jmeno": {
+        "krestniJmeno": "Tom\u00e1\u0161",
+        "prijmeni": "Sedl\u00e1\u010dek",
+        "titulPred": "Ing.",
+        "titulZa": null
+      },
+      "firstPartner": null,
+      "secondPartner": null
+    },
+    {
+      "id": "4857134101",
+      "nazev": null,
+      "adresa": "V podlu\u017e\u00ed 679\/2, Nusle, 14000 Praha",
+      "adress": {
+        "ulice": "V podlu\u017e\u00ed",
+        "cisloDomovni": "679",
+        "castObce": "Nusle",
+        "cisloOrientacni": "2",
+        "obec": "Praha",
+        "psc": "14000"
+      },
+      "jmeno": {
+        "krestniJmeno": "Tom\u00e1\u0161",
+        "prijmeni": "Sedl\u00e1\u010dek",
+        "titulPred": "Ing.",
+        "titulZa": null
+      },
+      "firstPartner": null,
+      "secondPartner": null
+    }
+  ]
+}

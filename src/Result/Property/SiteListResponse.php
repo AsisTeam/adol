@@ -2,7 +2,7 @@
 
 namespace AsisTeam\ADOL\Result\Property;
 
-use AsisTeam\ADOL\Entity\Site\Site;
+use AsisTeam\ADOL\Entity\Property\Site;
 use AsisTeam\ADOL\Exception\ResponseException;
 
 final class SiteListResponse

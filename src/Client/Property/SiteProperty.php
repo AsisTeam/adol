@@ -1,11 +1,11 @@
 <?php declare(strict_types = 1);
 
-namespace AsisTeam\ADOL\Client;
+namespace AsisTeam\ADOL\Client\Property;
 
-use AsisTeam\ADOL\Entity\Site\Building;
-use AsisTeam\ADOL\Entity\Site\Ownership;
-use AsisTeam\ADOL\Entity\Site\Sentence;
-use AsisTeam\ADOL\Entity\Site\Site;
+use AsisTeam\ADOL\Entity\Property\Building;
+use AsisTeam\ADOL\Entity\Property\Ownership;
+use AsisTeam\ADOL\Entity\Property\Sentence;
+use AsisTeam\ADOL\Entity\Property\Site;
 use AsisTeam\ADOL\Exception\ResponseException;
 use AsisTeam\ADOL\Result\Property\SiteBuildingsResult;
 use AsisTeam\ADOL\Result\Property\SiteDetailResult;
@@ -13,10 +13,8 @@ use AsisTeam\ADOL\Result\Property\SiteListResponse;
 use AsisTeam\ADOL\Result\Property\SiteOwnershipResult;
 use AsisTeam\ADOL\Result\Property\SiteSentencesResult;
 
-final class Property extends AbstractClient
+final class SiteProperty extends AbstractPropertyClient
 {
-
-	private const PATH      = '/papi/property';
 
 	private const LIST      = '/parcely/dotaz/?parcelaCislo=%s&katUzemi=%s';
 	private const DETAIL    = '/parcely/%s';
@@ -25,11 +23,12 @@ final class Property extends AbstractClient
 	private const SENTENCES = '/parcely/%s/vety';
 
 	/**
-	 * @return mixed[]
+	 * @return Site[]
 	 */
-	public function listSites(int $kmenoveCislo, string $cadAreaName): array
+	public function listSites(int $kmenoveCislo, string $cadastralAreaName): array
 	{
-		$data = $this->request('GET', sprintf(self::HOST . self::PATH . self::LIST, $kmenoveCislo, $cadAreaName), []);
+		$area = urlencode($cadastralAreaName);
+		$data = $this->request('GET', sprintf(self::HOST . self::PATH . self::LIST, $kmenoveCislo, $area), []);
 
 		return SiteListResponse::fromArray($data);
 	}
@@ -73,21 +72,6 @@ final class Property extends AbstractClient
 		$data = $this->request('GET', sprintf(self::HOST . self::PATH . self::SENTENCES, $siteId), []);
 
 		return SiteSentencesResult::fromArray($siteId, $data);
-	}
-
-	/**
-	 * @param mixed[] $params
-	 * @return mixed[]
-	 */
-	protected function request(string $method, string $url, array $params): array
-	{
-		$resp = parent::request($method, $url, $params);
-
-		if (!array_key_exists('data', $resp)) {
-			throw new ResponseException('Mandatory "data" field missing in response data.');
-		}
-
-		return $resp['data'];
 	}
 
 }

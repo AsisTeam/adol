@@ -1,0 +1,74 @@
+{
+  "status": true,
+  "data": [
+    {
+      "id": "4857134101",
+      "nazev": null,
+      "adresa": "V podlu\u017e\u00ed 679\/2, Nusle, 14000 Praha",
+      "adress": {
+        "ulice": "V podlu\u017e\u00ed",
+        "cisloDomovni": "679",
+        "castObce": "Nusle",
+        "cisloOrientacni": "2",
+        "obec": "Praha",
+        "psc": "14000"
+      },
+      "jmeno": {
+        "krestniJmeno": "Tom\u00e1\u0161",
+        "prijmeni": "Sedl\u00e1\u010dek",
+        "titulPred": "Ing.",
+        "titulZa": null
+      },
+      "firstPartner": null,
+      "secondPartner": null
+    },
+    {
+      "id": "40952368010",
+      "nazev": null,
+      "adresa": "Boleslavova 415\/42, Nusle, 14000 Praha",
+      "adress": {
+        "ulice": "Boleslavova",
+        "cisloDomovni": "415",
+        "castObce": "Nusle",
+        "cisloOrientacni": "42",
+        "obec": "Praha",
+        "psc": "14000"
+      },
+      "jmeno": {
+        "krestniJmeno": "Tom\u00e1\u0161",
+        "prijmeni": "Sedl\u00e1\u010dek",
+        "titulPred": "Ing.",
+        "titulZa": null
+      },
+      "firstPartner": null,
+      "secondPartner": null
+    },
+    {
+      "id": "1634391209",
+      "nazev": "Sedl\u00e1\u010dek Tom\u00e1\u0161 Ing. a Havl\u00ed\u010dkov\u00e1 Simona",
+      "adresa": "Tusarova 1234\/30, Hole\u0161ovice, 17000 Praha, Nad Bab\u00edm dolem 316, M\u011b\u0161ice, 25064 M\u011b\u0161ice",
+      "adress": null,
+      "jmeno": null,
+      "firstPartner": "1510332209",
+      "secondPartner": "1013998809"
+    },
+    {
+      "id": "4166779101",
+      "nazev": "Sedl\u00e1\u010dek Tom\u00e1\u0161 Ing. a Sedl\u00e1\u010dkov\u00e1 Dana Ing.",
+      "adresa": "Za ml\u00fdnem 1563\/27, Bran\u00edk, 14700 Praha",
+      "adress": null,
+      "jmeno": null,
+      "firstPartner": "4166778101",
+      "secondPartner": "1806065209"
+    },
+    {
+      "id": "4857136101",
+      "nazev": "Sedl\u00e1\u010dek Tom\u00e1\u0161 Ing. a Sedl\u00e1\u010dkov\u00e1 Marcela",
+      "adresa": "V podlu\u017e\u00ed 679\/2, Nusle, 14000 Praha",
+      "adress": null,
+      "jmeno": null,
+      "firstPartner": "4857134101",
+      "secondPartner": "4857135101"
+    }
+  ]
+}

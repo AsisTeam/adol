@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace AsisTeam\ADOL\Entity\Site;
+namespace AsisTeam\ADOL\Entity\Property;
 
-final class OwnerAddress
+final class Address
 {
 
 	/** @var string */
@@ -49,9 +49,9 @@ final class OwnerAddress
 			$data['psc'] ?? '',
 			$data['obec'] ?? '',
 			$data['ulice'] ?? '',
-			$data['castObce'] ?? '',
-			$data['cisloDomovni'] ?? '',
-			$data['cisloOrientacni'] ?? '',
+			$data['castObce'] ?? null,
+			$data['cisloDomovni'] ?? null,
+			$data['cisloOrientacni'] ?? null,
 		);
 	}
 

@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace AsisTeam\ADOL\Entity\Site;
+namespace AsisTeam\ADOL\Entity\Property;
 
 /**
  * Bpej stands for "Bonitovaná Půdně Ekologická Jednotka"
@@ -8,33 +8,33 @@ namespace AsisTeam\ADOL\Entity\Site;
 final class Bpej
 {
 
-	/** @var int */
+	/** @var float */
 	private $total;
 
-	/** @var int */
+	/** @var float */
 	private $meterAverage;
 
-	/** @var int */
+	/** @var float */
 	private $excavation;
 
-	public function __construct(int $total, int $meterAverage, int $excavation)
+	public function __construct(float $total, float $meterAverage, float $excavation)
 	{
 		$this->total        = $total;
 		$this->meterAverage = $meterAverage;
 		$this->excavation   = $excavation;
 	}
 
-	public function getTotal(): int
+	public function getTotal(): float
 	{
 		return $this->total;
 	}
 
-	public function getMeterAverage(): int
+	public function getMeterAverage(): float
 	{
 		return $this->meterAverage;
 	}
 
-	public function getExcavation(): int
+	public function getExcavation(): float
 	{
 		return $this->excavation;
 	}

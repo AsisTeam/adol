@@ -2,9 +2,8 @@
 
 namespace AsisTeam\ADOL\Result\Property;
 
-use AsisTeam\ADOL\Entity\Site\Owner;
-use AsisTeam\ADOL\Entity\Site\OwnerAddress;
-use AsisTeam\ADOL\Entity\Site\Ownership;
+use AsisTeam\ADOL\Entity\Property\Ownership;
+use AsisTeam\ADOL\Exception\InvalidArgumentException;
 use AsisTeam\ADOL\Exception\ResponseException;
 use Throwable;
 
@@ -39,28 +38,24 @@ final class SiteOwnershipResult
 	}
 
 	/**
-	 * @param mixed[] $ownershipData
+	 * @param mixed[] $data
 	 */
-	public static function ownershipFromArray(int $requestedId, array $ownershipData): Ownership
+	public static function ownershipFromArray(int $requestedId, array $data): Ownership
 	{
-		if (!isset($ownershipData['adress'])) {
-			throw new ResponseException('Missing owner\'s "jmeno" field in the response');
+		try {
+			$address = PersonListResult::extractPersonAddress($data);
+			$name = PersonListResult::extractPersonName($data);
+
+			return new Ownership(
+				$requestedId,
+				$name,
+				$address,
+				$data['podil'] ?? '',
+				$data['typPrav'] ?? '',
+			);
+		} catch (InvalidArgumentException $e) {
+			throw new ResponseException($e->getMessage(), $e->getCode(), $e);
 		}
-
-		if (!isset($ownershipData['jmeno'])) {
-			throw new ResponseException('Missing owner\'s "jmeno" field in the response');
-		}
-
-		$owner = Owner::fromArray($ownershipData['jmeno']);
-		$owner->setAddress(OwnerAddress::fromArray($ownershipData['adress']));
-
-		return new Ownership(
-			$requestedId,
-			$owner,
-			$ownershipData['podil'] ?? '',
-			$ownershipData['typPrav'] ?? '',
-			$ownershipData['nazev'] ?? '',
-		);
 	}
 
 }

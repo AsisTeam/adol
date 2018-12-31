@@ -2,9 +2,9 @@
 
 namespace AsisTeam\ADOL\Result\Property;
 
-use AsisTeam\ADOL\Entity\Site\Bpej;
-use AsisTeam\ADOL\Entity\Site\Gps;
-use AsisTeam\ADOL\Entity\Site\Site;
+use AsisTeam\ADOL\Entity\Property\Bpej;
+use AsisTeam\ADOL\Entity\Property\Gps;
+use AsisTeam\ADOL\Entity\Property\Site;
 use AsisTeam\ADOL\Exception\ResponseException;
 
 final class SiteDetailResult

@@ -2,7 +2,7 @@
 
 namespace AsisTeam\ADOL\Result\Property;
 
-use AsisTeam\ADOL\Entity\Site\Sentence;
+use AsisTeam\ADOL\Entity\Property\Sentence;
 use AsisTeam\ADOL\Exception\ResponseException;
 use Throwable;
 

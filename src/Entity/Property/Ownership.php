@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace AsisTeam\ADOL\Entity\Site;
+namespace AsisTeam\ADOL\Entity\Property;
 
 final class Ownership
 {
@@ -8,8 +8,11 @@ final class Ownership
 	/** @var int */
 	private $siteId;
 
-	/** @var Owner */
-	private $owner;
+	/** @var string */
+	private $name;
+
+	/** @var string */
+	private $address;
 
 	/** @var string */
 	private $share;
@@ -17,16 +20,19 @@ final class Ownership
 	/** @var string */
 	private $rightsType;
 
-	/** @var string|null */
-	private $name;
-
-	public function __construct(int $siteId, Owner $owner, string $share, string $rightsType, ?string $name = null)
+	public function __construct(
+		int $siteId,
+		string $name,
+		string $address,
+		string $share,
+		string $rightsType
+	)
 	{
 		$this->siteId     = $siteId;
-		$this->owner      = $owner;
+		$this->name       = $name;
+		$this->address    = $address;
 		$this->share      = $share;
 		$this->rightsType = $rightsType;
-		$this->name       = $name;
 	}
 
 	public function getSiteId(): int
@@ -34,9 +40,14 @@ final class Ownership
 		return $this->siteId;
 	}
 
-	public function getOwner(): Owner
+	public function getName(): string
 	{
-		return $this->owner;
+		return $this->name;
+	}
+
+	public function getAddress(): string
+	{
+		return $this->address;
 	}
 
 	public function getShare(): string
@@ -47,11 +58,6 @@ final class Ownership
 	public function getRightsType(): string
 	{
 		return $this->rightsType;
-	}
-
-	public function getName(): ?string
-	{
-		return $this->name;
 	}
 
 }

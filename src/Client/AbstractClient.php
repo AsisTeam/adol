@@ -69,7 +69,7 @@ abstract class AbstractClient
 		}
 
 		if ($data['status'] !== true) {
-			$err = $data['errorMessage'] ?? $data['message'] ?? 'Unknown error.';
+			$err = $data['errorMessage'] ?? $data['message'] ?? $data['error'] ?? 'Unknown error.';
 
 			throw new ResponseException(sprintf('Response error: "%s"', $err));
 		}

@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace AsisTeam\ADOL\Entity\Site;
+namespace AsisTeam\ADOL\Entity\Property;
 
 final class Site
 {
