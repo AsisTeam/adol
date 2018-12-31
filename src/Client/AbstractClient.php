@@ -19,9 +19,16 @@ abstract class AbstractClient
 	/** @var ClientInterface */
 	private $client;
 
-	public function __construct(string $token, ?ClientInterface $client = null)
+	/** @var mixed[]  */
+	private $options = [];
+
+	/**
+	 * @param mixed[] $requestOptions
+	 */
+	public function __construct(string $token, ?ClientInterface $client = null, array $requestOptions = [])
 	{
 		$this->token = $token;
+		$this->options = $requestOptions;
 
 		if ($client === null) {
 			$client = new Client();
@@ -43,7 +50,7 @@ abstract class AbstractClient
 		}
 
 		try {
-			$response = $this->client->request($method, $url, $params);
+			$response = $this->client->request($method, $url, array_merge($this->options, $params));
 		} catch (Throwable $e) {
 			throw new RequestException($e->getMessage(), $e->getCode(), $e);
 		}
@@ -58,11 +65,13 @@ abstract class AbstractClient
 		}
 
 		if (!array_key_exists('status', $data)) {
-			throw new ResponseException('Mandatory "status" field missing in result data.');
+			throw new ResponseException('Mandatory "status" field missing in response data.');
 		}
 
 		if ($data['status'] !== true) {
-			throw new ResponseException(sprintf('Response error: "%s"', $data['errorMessage'] ?? 'Unknown error.'));
+			$err = $data['errorMessage'] ?? $data['message'] ?? 'Unknown error.';
+
+			throw new ResponseException(sprintf('Response error: "%s"', $err));
 		}
 
 		return $data;

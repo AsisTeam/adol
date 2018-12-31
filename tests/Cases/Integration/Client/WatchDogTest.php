@@ -2,25 +2,24 @@
 
 namespace AsisTeam\ADOL\Tests\Cases\Integration\Client;
 
-use AsisTeam\ADOL\Client\PropertyWatchDog;
-use AsisTeam\ADOL\Entity\Estate;
-use AsisTeam\ADOL\Entity\Estate\Building;
-use AsisTeam\ADOL\Entity\Estate\Land;
+use AsisTeam\ADOL\Client\WatchDog;
+use AsisTeam\ADOL\Entity\WatchDog\Building;
+use AsisTeam\ADOL\Entity\WatchDog\Land;
 use Tester\Assert;
 use Tester\Environment;
 use Tester\TestCase;
 
 require_once __DIR__ . '/../../../bootstrap.php';
 
-class PropertyWatchDogTest extends TestCase
+class WatchDogTest extends TestCase
 {
 
-	/** @var PropertyWatchDog */
+	/** @var WatchDog */
 	private $client;
 
 	public function setUp(): void
 	{
-		$this->client = new PropertyWatchDog('fill your token here');
+		$this->client = new WatchDog('fill your token here');
 		Environment::skip('this test should be run manually (do not forget to fill valid token)');
 	}
 
@@ -31,7 +30,7 @@ class PropertyWatchDogTest extends TestCase
 		$records = $this->client->list(0);
 		Assert::count(0, $records);
 
-		$insertion = $this->client->insert(Land::create(549193, Estate::EVIDENCE_PKN, true, 5));
+		$insertion = $this->client->insert(Land::create(549193, Realty::EVIDENCE_PKN, true, 5));
 		Assert::true((int) $insertion->getId() > 0);
 
 		$record = $this->client->detail($insertion->getId());
@@ -43,7 +42,7 @@ class PropertyWatchDogTest extends TestCase
 	 */
 	public function testInsertError(): void
 	{
-		$this->client->insert(Land::create(549193, Estate::EVIDENCE_PKN, true, 5));
+		$this->client->insert(Land::create(549193, Realty::EVIDENCE_PKN, true, 5));
 	}
 
 	public function testInsert(): void
@@ -63,4 +62,4 @@ class PropertyWatchDogTest extends TestCase
 
 }
 
-(new PropertyWatchDogTest())->run();
+(new WatchDogTest())->run();

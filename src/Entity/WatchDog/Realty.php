@@ -1,14 +1,10 @@
 <?php declare(strict_types = 1);
 
-namespace AsisTeam\ADOL\Entity;
+namespace AsisTeam\ADOL\Entity\WatchDog;
 
-use AsisTeam\ADOL\Entity\Estate\Building;
-use AsisTeam\ADOL\Entity\Estate\BuildingUnit;
-use AsisTeam\ADOL\Entity\Estate\IEstate;
-use AsisTeam\ADOL\Entity\Estate\Land;
 use AsisTeam\ADOL\Exception\InvalidArgumentException;
 
-class Estate implements IEstate
+class Realty implements IEstate
 {
 
 	public const VALID_ESTATES = [Land::TYPE, Building::TYPE, BuildingUnit::TYPE];

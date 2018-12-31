@@ -1,0 +1,29 @@
+{
+  "status": true,
+  "data": {
+    "id": 2207415101,
+    "vlastnici": [
+      {
+        "jmeno0": "Luong Hai Long",
+        "adresa": "Kv\u011btnov\u00e9ho v\u00edt\u011bzstv\u00ed 60\/13, Chodov, 14900 Praha",
+        "podil": "1\/1",
+        "typPrav": "Vlastnick\u00e9 pr\u00e1vo",
+        "adress": {
+          "ulice": "Kv\u011btnov\u00e9ho v\u00edt\u011bzstv\u00ed",
+          "cisloDomovni": "60",
+          "castObce": "Chodov",
+          "cisloOrientacni": "13",
+          "obec": "Praha",
+          "psc": "14900"
+        },
+        "jmeno": {
+          "krestniJmeno": "Hai Long",
+          "prijmeni": "Luong",
+          "titulPred": null,
+          "titulZa": null
+        },
+        "nazev": null
+      }
+    ]
+  }
+}

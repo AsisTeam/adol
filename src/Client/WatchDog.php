@@ -2,13 +2,13 @@
 
 namespace AsisTeam\ADOL\Client;
 
-use AsisTeam\ADOL\Entity\Estate\IEstate;
+use AsisTeam\ADOL\Entity\WatchDog\IEstate;
 use AsisTeam\ADOL\Exception\RequestException;
 use AsisTeam\ADOL\Exception\ResponseException;
-use AsisTeam\ADOL\Result\Property\WatchDog\Insertion;
-use AsisTeam\ADOL\Result\Property\WatchDog\Record;
+use AsisTeam\ADOL\Result\WatchDog\Insertion;
+use AsisTeam\ADOL\Result\WatchDog\Record;
 
-final class PropertyWatchDog extends AbstractClient
+final class WatchDog extends AbstractClient
 {
 
 	private const API = '/papi/property-watchdog';

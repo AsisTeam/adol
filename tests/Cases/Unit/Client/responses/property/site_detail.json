@@ -1,0 +1,24 @@
+{
+  "status": true,
+  "data": {
+    "id": 2207415101,
+    "parcelaCislo": "PKN 15\/1",
+    "obec": "Praha",
+    "katUzemi": "Chodov",
+    "katUzemiKod": 728225,
+    "lv": 567,
+    "vymera": 3,
+    "typParcely": "PKN",
+    "mapovyList": "DKM",
+    "zpUrceniVymery": "Ze sou\u0159adnic v S-JTSK",
+    "druhPoz": "ostatn\u00ed plocha",
+    "podilVlastnika": null,
+    "gpsLat": 50.033520053805,
+    "gpsLng": 14.503612442753,
+    "gpsSource": "land",
+    "bpejCelkem": 30,
+    "bpejPrumerNaMetr": 20,
+    "bpejVymera": 10,
+    "vlastnici": null
+  }
+}

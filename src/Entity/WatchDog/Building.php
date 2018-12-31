@@ -1,10 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace AsisTeam\ADOL\Entity\Estate;
+namespace AsisTeam\ADOL\Entity\WatchDog;
 
-use AsisTeam\ADOL\Entity\Estate;
-
-final class Building extends Estate implements IEstate
+final class Building extends Realty implements IEstate
 {
 
 	public const TYPE = 'building';

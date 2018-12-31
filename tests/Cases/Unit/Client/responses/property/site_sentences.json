@@ -1,0 +1,23 @@
+{
+  "status": true,
+  "data": {
+    "id": 1757860604,
+    "vety": [
+      {
+        "typVety": "Jiné zápisy",
+        "veta": "Změna výměr obnovou operátu",
+        "jmeno": null
+      },
+      {
+        "typVety": "Způsob ochrany nemovitosti",
+        "veta": "nemovitá kulturní památka",
+        "jmeno": null
+      },
+      {
+        "typVety": "Způsob ochrany nemovitosti",
+        "veta": "pam. rezervace - budova, pozemek v památkové rezervaci",
+        "jmeno": "František"
+      }
+    ]
+  }
+}

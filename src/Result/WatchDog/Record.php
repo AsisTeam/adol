@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace AsisTeam\ADOL\Result\Property\WatchDog;
+namespace AsisTeam\ADOL\Result\WatchDog;
 
-use AsisTeam\ADOL\Entity\Estate;
+use AsisTeam\ADOL\Entity\WatchDog\Realty;
 use DateTimeImmutable;
 
 final class Record
@@ -50,7 +50,7 @@ final class Record
 	/** @var string */
 	private $cadastralUrl;
 
-	/** @var Estate */
+	/** @var Realty */
 	private $estate;
 
 	/**
@@ -82,7 +82,7 @@ final class Record
 		}
 
 		if (isset($a['estate'])) {
-			$rec->estate = Estate::fromArray($a['estate']);
+			$rec->estate = Realty::fromArray($a['estate']);
 		}
 
 		return $rec;
@@ -179,7 +179,7 @@ final class Record
 		return $this->cadastralUrl;
 	}
 
-	public function getEstate(): Estate
+	public function getEstate(): Realty
 	{
 		return $this->estate;
 	}
