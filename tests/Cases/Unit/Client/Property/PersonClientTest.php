@@ -2,7 +2,7 @@
 
 namespace AsisTeam\ADOL\Tests\Cases\Unit\Client\Property;
 
-use AsisTeam\ADOL\Client\Property\PersonProperty;
+use AsisTeam\ADOL\Client\Property\PersonClient;
 use AsisTeam\ADOL\Entity\Property\Person;
 use AsisTeam\ADOL\Tests\Cases\Unit\Client\Helpers;
 use Tester\Assert;
@@ -10,7 +10,7 @@ use Tester\TestCase;
 
 require_once __DIR__ . '/../../../../bootstrap.php';
 
-class PersonPropertyTest extends TestCase
+class PersonClientTest extends TestCase
 {
 
 	/**
@@ -18,13 +18,13 @@ class PersonPropertyTest extends TestCase
 	 */
 	public function testError(): void
 	{
-		$client = new PersonProperty('token', Helpers::createHttpClientMock('property/any_error.json'));
+		$client = new PersonClient('token', Helpers::createHttpClientMock('property/any_error.json'));
 		$client->findPerson(new Person('', ''));
 	}
 
 	public function testFindPerson(): void
 	{
-		$client = new PersonProperty('token', Helpers::createHttpClientMock('property/person_find.json'));
+		$client = new PersonClient('token', Helpers::createHttpClientMock('property/person_find.json'));
 		$persons = $client->findPerson(new Person('Tomáš', 'Sedláček'));
 
 		Assert::count(5, $persons);
@@ -47,7 +47,7 @@ class PersonPropertyTest extends TestCase
 
 	public function testGetPerson(): void
 	{
-		$client = new PersonProperty('token', Helpers::createHttpClientMock('property/person_get.json'));
+		$client = new PersonClient('token', Helpers::createHttpClientMock('property/person_get.json'));
 		$persons = $client->getPerson(new Person('Tomáš', 'Sedláček'));
 
 		Assert::count(2, $persons);
@@ -68,4 +68,4 @@ class PersonPropertyTest extends TestCase
 
 }
 
-(new PersonPropertyTest())->run();
+(new PersonClientTest())->run();

@@ -1,0 +1,26 @@
+{
+  "status": true,
+  "data": {
+    "id": 88606201,
+    "jednotkaCislo": "192/4",
+    "typJednotky": "jednotka vymezen\u00e1 podle z\u00e1kona o vlastnictv\u00ed byt\u016f",
+    "vyuziti": "byt",
+    "budovaCislo": "Č.P.192",
+    "katUzemi": "Bene\u0161ov u Prahy",
+    "katUzemiKod": 602191,
+    "lv": 7766,
+    "podil": "5346\/41249",
+    "obec": "Bene\u0161ov",
+    "castObce": "Bene\u0161ov",
+    "okres": "Bene\u0161ov",
+    "podilVlastnika": null,
+    "gpsLng": 14.684720278351,
+    "gpsLat": 49.781471528564,
+    "gpsSource": "building",
+    "budovaId": 279828201,
+    "addressPointCodes": [
+      14428644
+    ],
+    "vlastnici": null
+  }
+}

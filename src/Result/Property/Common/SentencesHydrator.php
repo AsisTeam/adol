@@ -1,12 +1,12 @@
 <?php declare(strict_types = 1);
 
-namespace AsisTeam\ADOL\Result\Property;
+namespace AsisTeam\ADOL\Result\Property\Common;
 
 use AsisTeam\ADOL\Entity\Property\Sentence;
 use AsisTeam\ADOL\Exception\ResponseException;
 use Throwable;
 
-final class SiteSentencesResult
+final class SentencesHydrator
 {
 
 	/**

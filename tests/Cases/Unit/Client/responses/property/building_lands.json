@@ -1,0 +1,12 @@
+{
+  "status": true,
+  "data": {
+    "budovaId": "309017408",
+    "parcely": [
+      {
+        "id": "1628009408",
+        "parcelaCislo": "PKN St. 119"
+      }
+    ]
+  }
+}

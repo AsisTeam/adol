@@ -1,0 +1,28 @@
+{
+  "status": true,
+  "data": {
+    "id": 88606201,
+    "vety": [
+      {
+        "typVety": "Omezení vlastnického práva",
+        "veta": "Věcné břemeno chůze a jízdy",
+        "jmeno": null
+      },
+      {
+        "typVety": "Omezení vlastnického práva",
+        "veta": "Věcné břemeno oprav a údržby",
+        "jmeno": null
+      },
+      {
+        "typVety": "Omezení vlastnického práva",
+        "veta": "Věcné břemeno (podle listiny)",
+        "jmeno": null
+      },
+      {
+        "typVety": "Omezení vlastnického práva",
+        "veta": "Zástavní právo smluvní",
+        "jmeno": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "status": true,
+  "data": [
+    {
+      "id": 309077408,
+      "budovaCislo": "\u010c.P.1",
+      "obec": "Mle\u010dice",
+      "castObce": "Mle\u010dice",
+      "katUzemi": "Mle\u010dice",
+      "katUzemiKod": 697290,
+      "lv": 311,
+      "typStavby": "budova s \u010d\u00edslem popisn\u00fdm",
+      "zpVyuziti": "objekt k bydlen\u00ed",
+      "okres": "Rokycany",
+      "podilVlastnika": null,
+      "gpsLat": 49.919217034446,
+      "gpsLng": 13.693161559904,
+      "gpsSource": "building",
+      "addressPointCodes": [
+        7125658
+      ],
+      "vlastnici": null
+    }
+  ]
+}

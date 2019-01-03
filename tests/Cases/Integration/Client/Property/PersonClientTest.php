@@ -2,23 +2,23 @@
 
 namespace AsisTeam\ADOL\Tests\Cases\Integration\Client\Property;
 
-use AsisTeam\ADOL\Client\Property\PersonProperty;
+use AsisTeam\ADOL\Client\Property\PersonClient;
 use AsisTeam\ADOL\Entity\Property\Person;
 use Tester\Assert;
 
 require_once __DIR__ . '/../../../../bootstrap.php';
 
-class PersonPropertyTest extends AbstractPropertyTestCase
+class PersonClientTest extends AbstractPropertyTestCase
 {
 
-	/** @var PersonProperty */
+	/** @var PersonClient */
 	private $client;
 
 	public function setUp(): void
 	{
 		parent::setUp();
 
-		$this->client = new PersonProperty($this->token);
+		$this->client = new PersonClient($this->token);
 	}
 
 	public function testFindPerson(): void
@@ -52,4 +52,4 @@ class PersonPropertyTest extends AbstractPropertyTestCase
 
 }
 
-(new PersonPropertyTest())->run();
+(new PersonClientTest())->run();

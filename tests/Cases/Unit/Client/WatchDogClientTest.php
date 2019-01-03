@@ -2,7 +2,7 @@
 
 namespace AsisTeam\ADOL\Tests\Cases\Unit\Client;
 
-use AsisTeam\ADOL\Client\WatchDog;
+use AsisTeam\ADOL\Client\WatchDogClient;
 use AsisTeam\ADOL\Entity\WatchDog\Building;
 use AsisTeam\ADOL\Entity\WatchDog\Land;
 use AsisTeam\ADOL\Entity\WatchDog\Realty;
@@ -12,7 +12,7 @@ use Tester\TestCase;
 
 require_once __DIR__ . '/../../../bootstrap.php';
 
-class WatchDogTest extends TestCase
+class WatchDogClientTest extends TestCase
 {
 
 	/**
@@ -20,13 +20,13 @@ class WatchDogTest extends TestCase
 	 */
 	public function testInsertError(): void
 	{
-		$client = new WatchDog('token', Helpers::createHttpClientMock('watch-dog/insert_error.json'));
+		$client = new WatchDogClient('token', Helpers::createHttpClientMock('watch-dog/insert_error.json'));
 		$client->insert(Land::create(549193, Realty::EVIDENCE_PKN, true, 5));
 	}
 
 	public function testInsertSuccessWithWarning(): void
 	{
-		$client = new WatchDog('token', Helpers::createHttpClientMock('watch-dog/insert.json'));
+		$client = new WatchDogClient('token', Helpers::createHttpClientMock('watch-dog/insert.json'));
 		$ins = $client->insert(Land::create(746118, Realty::EVIDENCE_PKN, true, 5));
 
 		Assert::equal('108193', $ins->getId());
@@ -38,7 +38,7 @@ class WatchDogTest extends TestCase
 
 	public function testList(): void
 	{
-		$client = new WatchDog('token', Helpers::createHttpClientMock('watch-dog/list.json'));
+		$client = new WatchDogClient('token', Helpers::createHttpClientMock('watch-dog/list.json'));
 		$records = $client->list(0, 10);
 
 		Assert::count(2, $records);
@@ -67,7 +67,7 @@ class WatchDogTest extends TestCase
 
 	public function testDetail(): void
 	{
-		$client = new WatchDog('token', Helpers::createHttpClientMock('watch-dog/detail.json'));
+		$client = new WatchDogClient('token', Helpers::createHttpClientMock('watch-dog/detail.json'));
 		$record = $client->detail('108216');
 
 		$this->assertRecord108216($record);
@@ -91,4 +91,4 @@ class WatchDogTest extends TestCase
 
 }
 
-(new WatchDogTest())->run();
+(new WatchDogClientTest())->run();

@@ -1,0 +1,18 @@
+{
+  "status": true,
+  "data": {
+    "id": 309017408,
+    "vlastnici": [
+      {
+        "adresa": "Buzulucká 140, Komárov, 26762 Komárov",
+        "jmeno": "Tomášek Petr",
+        "podil": "591/3652"
+      },
+      {
+        "adresa": "Potoční 292, Poříčí nad Sázavou, 25721 Poříčí nad Sázavou",
+        "jmeno": "Slavíček Marek Ing. a Slavíčková Kateřina Ing.",
+        "podil": "3061/3652"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "status": true,
+  "data": {
+    "budovaId": "309017408",
+    "jednotky": [
+      {
+        "id": "47189408",
+        "jednotkaCislo": "88/1"
+      },
+      {
+        "id": "47190 408",
+        "jednotkaCislo": "88/2"
+      },
+      {
+        "id": "47191408",
+        "jednotkaCislo": "88/3"
+      },
+      {
+        "id": "47192408",
+        "jednotkaCislo": "88/4"
+      },
+      {
+        "id": "47193408",
+        "jednotkaCislo": "88/5"
+      },
+      {
+        "id": "47194408",
+        "jednotkaCislo": "88/6"
+      },
+      {
+        "id": "47195408",
+        "jednotkaCislo": "88/7"
+      }
+    ]
+  }
+}

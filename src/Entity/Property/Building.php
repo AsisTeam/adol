@@ -2,38 +2,77 @@
 
 namespace AsisTeam\ADOL\Entity\Property;
 
-final class Building
+class Building extends Realty
 {
 
-	/** @var int */
-	private $id;
+	/** @var string */
+	protected $municipalityPart;
 
 	/** @var string */
-	private $label;
+	protected $region;
 
-	/** @var int */
-	private $siteId;
+	/** @var string */
+	protected $usage;
 
-	public function __construct(int $id, string $label, int $siteId)
+	/** @var int[] */
+	protected $addressPointCodes;
+
+	/**
+	 * @param int[] $addressPointCodes
+	 */
+	public function __construct(
+		int $id,
+		string $objectLabel,
+		string $objectType,
+		int $cadastralAreaCode,
+		string $cadastralAreaName,
+		string $municipality,
+		int $certificateOfTitle,
+		Gps $gps,
+		string $region,
+		string $municipalityPart,
+		string $usage,
+		array $addressPointCodes
+	)
 	{
-		$this->id     = $id;
-		$this->label  = $label;
-		$this->siteId = $siteId;
+		parent::__construct(
+			$id,
+			$objectLabel,
+			$objectType,
+			$cadastralAreaCode,
+			$cadastralAreaName,
+			$municipality,
+			$certificateOfTitle,
+			$gps
+		);
+
+		$this->region            = $region;
+		$this->municipalityPart  = $municipalityPart;
+		$this->usage             = $usage;
+		$this->addressPointCodes = $addressPointCodes;
 	}
 
-	public function getId(): int
+	public function getMunicipalityPart(): string
 	{
-		return $this->id;
+		return $this->municipalityPart;
 	}
 
-	public function getLabel(): string
+	public function getRegion(): string
 	{
-		return $this->label;
+		return $this->region;
 	}
 
-	public function getSiteId(): int
+	public function getUsage(): string
 	{
-		return $this->siteId;
+		return $this->usage;
+	}
+
+	/**
+	 * @return int[]
+	 */
+	public function getAddressPointCodes(): array
+	{
+		return $this->addressPointCodes;
 	}
 
 }

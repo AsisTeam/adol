@@ -1,13 +1,13 @@
 <?php declare(strict_types = 1);
 
-namespace AsisTeam\ADOL\Result\Property;
+namespace AsisTeam\ADOL\Result\Property\Person;
 
 use AsisTeam\ADOL\Entity\Property\Address;
 use AsisTeam\ADOL\Entity\Property\Person;
 use AsisTeam\ADOL\Exception\InvalidArgumentException;
 use AsisTeam\ADOL\Exception\ResponseException;
 
-final class PersonListResult
+final class PersonListHydrator
 {
 
 	/**
@@ -61,9 +61,17 @@ final class PersonListResult
 			return $data['nazev'];
 		}
 
-		if (isset($data['jmeno']) && is_array($data['jmeno'])) {
-			return (Person::fromArray($data['jmeno']))->toString();
+		if (isset($data['jmeno'])) {
+			if (is_string($data['jmeno'])) {
+				return $data['jmeno'];
+			}
+
+			if (is_array($data['jmeno'])) {
+				return (Person::fromArray($data['jmeno']))->toString();
+			}
 		}
+
+		throw new InvalidArgumentException(sprintf('Could not extract person name. Data: %s', json_encode($data)));
 	}
 
 }

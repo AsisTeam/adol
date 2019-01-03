@@ -8,7 +8,7 @@ use AsisTeam\ADOL\Exception\ResponseException;
 use AsisTeam\ADOL\Result\WatchDog\Insertion;
 use AsisTeam\ADOL\Result\WatchDog\Record;
 
-final class WatchDog extends AbstractClient
+final class WatchDogClient extends AbstractClient
 {
 
 	private const API = '/papi/property-watchdog';

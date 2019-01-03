@@ -6,7 +6,7 @@ final class Sentence
 {
 
 	/** @var int */
-	private $siteId;
+	private $realtyId;
 
 	/** @var string */
 	private $sentence;
@@ -17,17 +17,17 @@ final class Sentence
 	/** @var string|null */
 	private $name;
 
-	public function __construct(int $siteId, string $sentence, ?string $type = null, ?string $name = null)
+	public function __construct(int $realtyId, string $sentence, ?string $type = null, ?string $name = null)
 	{
-		$this->siteId   = $siteId;
+		$this->realtyId = $realtyId;
 		$this->sentence = $sentence;
 		$this->type     = $type;
 		$this->name     = $name;
 	}
 
-	public function getSiteId(): int
+	public function getRealtyId(): int
 	{
-		return $this->siteId;
+		return $this->realtyId;
 	}
 
 	public function getSentence(): string

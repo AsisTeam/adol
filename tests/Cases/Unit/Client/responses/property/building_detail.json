@@ -1,0 +1,23 @@
+{
+  "status": true,
+  "data": {
+    "id": 309077408,
+    "budovaCislo": "Č.P.1",
+    "obec": "Mlečice",
+    "castObce": "Mlečice",
+    "katUzemi": "Mlečice",
+    "katUzemiKod": 697290,
+    "lv": 311,
+    "typStavby": "budova s číslem popisným",
+    "zpVyuziti": "objekt k bydlení",
+    "okres": "Rokycany",
+    "podilVlastnika": null,
+    "gpsLat": 49.919217034446,
+    "gpsLng": 13.693161559904,
+    "gpsSource": "building",
+    "addressPointCodes": [
+      7125658
+    ],
+    "vlastnici": null
+  }
+}

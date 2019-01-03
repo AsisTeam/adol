@@ -5,9 +5,6 @@ namespace AsisTeam\ADOL\Entity\Property;
 final class Ownership
 {
 
-	/** @var int */
-	private $siteId;
-
 	/** @var string */
 	private $name;
 
@@ -21,23 +18,16 @@ final class Ownership
 	private $rightsType;
 
 	public function __construct(
-		int $siteId,
 		string $name,
 		string $address,
 		string $share,
 		string $rightsType
 	)
 	{
-		$this->siteId     = $siteId;
 		$this->name       = $name;
 		$this->address    = $address;
 		$this->share      = $share;
 		$this->rightsType = $rightsType;
-	}
-
-	public function getSiteId(): int
-	{
-		return $this->siteId;
 	}
 
 	public function getName(): string

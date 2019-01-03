@@ -5,17 +5,20 @@ namespace AsisTeam\ADOL\Entity\Property;
 final class Address
 {
 
-	/** @var string */
-	private $zip = '';
-
-	/** @var string */
+	/** @var string|null */
 	private $municipality = '';
 
-	/** @var string */
+	/** @var string|null */
 	private $street = '';
 
 	/** @var string|null */
+	private $zip = '';
+
+	/** @var string|null */
 	private $municipalityPart;
+
+	/** @var string|null */
+	private $region;
 
 	/** @var string|null */
 	private $houseNumber;
@@ -23,36 +26,29 @@ final class Address
 	/** @var string|null */
 	private $orientationNumber;
 
-	public function __construct(
-		string $zip,
-		string $municipality,
-		string $street,
-		?string $municipalityPart = null,
-		?string $houseNumber = null,
-		?string $orientationNumber = null
-	)
-	{
-		$this->zip               = $zip;
-		$this->municipality      = $municipality;
-		$this->street            = $street;
-		$this->municipalityPart  = $municipalityPart;
-		$this->houseNumber       = $houseNumber;
-		$this->orientationNumber = $orientationNumber;
-	}
+	/** @var string|null */
+	private $registrationNumber;
 
 	/**
 	 * @param mixed[] $data
 	 */
 	public static function fromArray(array $data): self
 	{
-		return new self(
-			$data['psc'] ?? '',
-			$data['obec'] ?? '',
-			$data['ulice'] ?? '',
-			$data['castObce'] ?? null,
-			$data['cisloDomovni'] ?? null,
-			$data['cisloOrientacni'] ?? null,
-		);
+		$addr = new self();
+		$addr->setMunicipality($data['obec'] ?? null);
+		$addr->setMunicipalityPart($data['castObce'] ?? null);
+		$addr->setRegion($data['okres'] ?? null);
+		$addr->setStreet($data['ulice'] ?? null);
+		$addr->setZip($data['psc'] ?? null);
+		$addr->setHouseNumber($data['cisloDomovni'] ?? null);
+		$addr->setOrientationNumber($data['cisloOrientacni'] ?? null);
+		$addr->setRegistrationNumber($data['cisloEvidencni'] ?? null);
+
+		if (isset($data['budovaCislo'])) {
+			$addr->setHouseNumber($data['budovaCislo'] ?? null);
+		}
+
+		return $addr;
 	}
 
 	public function toString(): string
@@ -65,19 +61,34 @@ final class Address
 		return $out;
 	}
 
-	public function getZip(): string
-	{
-		return $this->zip;
-	}
-
-	public function getMunicipality(): string
+	public function getMunicipality(): ?string
 	{
 		return $this->municipality;
 	}
 
-	public function getStreet(): string
+	public function setMunicipality(?string $municipality): void
+	{
+		$this->municipality = $municipality;
+	}
+
+	public function getStreet(): ?string
 	{
 		return $this->street;
+	}
+
+	public function setStreet(?string $street): void
+	{
+		$this->street = $street;
+	}
+
+	public function getZip(): ?string
+	{
+		return $this->zip;
+	}
+
+	public function setZip(?string $zip): void
+	{
+		$this->zip = $zip;
 	}
 
 	public function getMunicipalityPart(): ?string
@@ -85,14 +96,49 @@ final class Address
 		return $this->municipalityPart;
 	}
 
+	public function setMunicipalityPart(?string $municipalityPart): void
+	{
+		$this->municipalityPart = $municipalityPart;
+	}
+
+	public function getRegion(): ?string
+	{
+		return $this->region;
+	}
+
+	public function setRegion(?string $region): void
+	{
+		$this->region = $region;
+	}
+
 	public function getHouseNumber(): ?string
 	{
 		return $this->houseNumber;
 	}
 
+	public function setHouseNumber(?string $houseNumber): void
+	{
+		$this->houseNumber = $houseNumber;
+	}
+
 	public function getOrientationNumber(): ?string
 	{
 		return $this->orientationNumber;
+	}
+
+	public function setOrientationNumber(?string $orientationNumber): void
+	{
+		$this->orientationNumber = $orientationNumber;
+	}
+
+	public function getRegistrationNumber(): ?string
+	{
+		return $this->registrationNumber;
+	}
+
+	public function setRegistrationNumber(?string $registrationNumber): void
+	{
+		$this->registrationNumber = $registrationNumber;
 	}
 
 }

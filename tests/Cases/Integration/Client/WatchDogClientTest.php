@@ -2,7 +2,7 @@
 
 namespace AsisTeam\ADOL\Tests\Cases\Integration\Client;
 
-use AsisTeam\ADOL\Client\WatchDog;
+use AsisTeam\ADOL\Client\WatchDogClient;
 use AsisTeam\ADOL\Entity\WatchDog\Building;
 use AsisTeam\ADOL\Entity\WatchDog\Land;
 use Tester\Assert;
@@ -11,15 +11,15 @@ use Tester\TestCase;
 
 require_once __DIR__ . '/../../../bootstrap.php';
 
-class WatchDogTest extends TestCase
+class WatchDogClientTest extends TestCase
 {
 
-	/** @var WatchDog */
+	/** @var WatchDogClient */
 	private $client;
 
 	public function setUp(): void
 	{
-		$this->client = new WatchDog('fill your token here');
+		$this->client = new WatchDogClient('fill your token here');
 		Environment::skip('this test should be run manually (do not forget to fill valid token)');
 	}
 
@@ -62,4 +62,4 @@ class WatchDogTest extends TestCase
 
 }
 
-(new WatchDogTest())->run();
+(new WatchDogClientTest())->run();
