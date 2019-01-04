@@ -4,10 +4,7 @@ namespace AsisTeam\ADOL\Tests\Cases\Integration\Client\Property;
 
 use AsisTeam\ADOL\Client\Property\BuildingClient;
 use AsisTeam\ADOL\Entity\Property\Address;
-use AsisTeam\ADOL\Entity\Property\Building;
-use AsisTeam\ADOL\Entity\Property\Sentence;
 use Tester\Assert;
-use Tester\Environment;
 
 require_once __DIR__ . '/../../../../bootstrap.php';
 
@@ -32,51 +29,40 @@ class BuildingClientTest extends AbstractPropertyTestCase
 		$addr->setMunicipalityPart('Holínské Předměstí');
 		$addr->setHouseNumber('488');
 
-		$res = $this->client->findBuildings($addr);
-
-		Assert::true(count($res) > 0);
-		foreach ($res as $building) {
-			Assert::type(Building::class, $building);
-			Assert::equal(298782604, $building->getId());
-		}
+		$buildings = $this->client->findBuildings($addr);
+		Assert::count(1, $buildings);
+		Assert::equal(298782604, $buildings[0]->getId());
 	}
 
 	public function testGetBuilding(): void
 	{
-		$res = $this->client->getBuilding(309077408);
-		Assert::type(Building::class, $res);
+		$building = $this->client->getBuilding(309077408);
+		Assert::equal(697290, $building->getCadastralAreaCode());
 	}
 
 	public function testGetSentences(): void
 	{
-		$res = $this->client->getSentences(309077408);
-
-		Assert::true(count($res) > 0);
-		foreach ($res as $sentence) {
-			Assert::type(Sentence::class, $sentence);
-		}
+		$sentences = $this->client->getSentences(309077408);
+		Assert::count(1, $sentences);
+		Assert::equal(309077408, $sentences[0]->getRealtyId());
 	}
 
 	public function testGetUnits(): void
 	{
-		Environment::skip('API does not return valid data for getUnits');
-
-		$res = $this->client->getUnits(298782604);
-		Assert::true(count($res) > 0);
+		$units = $this->client->getUnits(309017408);
+		Assert::count(6, $units);
 	}
 
 	public function testGetLands(): void
 	{
-		Environment::skip('API does not return valid data for getLands');
-
-		$res = $this->client->getLands(309017408);
-		Assert::true(count($res) >= 0);
+		$lands = $this->client->getLands(309017408);
+		Assert::count(1, $lands);
 	}
 
 	public function testGetOwners(): void
 	{
-		$res = $this->client->getOwnerships(309017408);
-		Assert::true(count($res) >= 0);
+		$owns = $this->client->getOwnerships(309017408);
+		Assert::count(1, $owns);
 	}
 
 }

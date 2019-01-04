@@ -3,6 +3,7 @@
 namespace AsisTeam\ADOL\Tests\Cases\Unit\Client\Property;
 
 use AsisTeam\ADOL\Client\Property\PersonClient;
+use AsisTeam\ADOL\Entity\Property\Land;
 use AsisTeam\ADOL\Entity\Property\Person;
 use AsisTeam\ADOL\Tests\Cases\Unit\Client\Helpers;
 use Tester\Assert;
@@ -64,6 +65,20 @@ class PersonClientTest extends TestCase
 		Assert::equal(4857134101, $p->getId());
 		Assert::equal('V podluží 679/2, Nusle, 14000 Praha', $p->getAddress());
 		Assert::equal('Ing. Tomáš Sedláček', $p->getFullName());
+	}
+
+	public function testGetLands(): void
+	{
+		$client = new PersonClient('token', Helpers::createHttpClientMock('property/person_lands.json'));
+		$lands = $client->getLands(538364604);
+
+		Assert::count(6, $lands);
+		foreach ($lands as $land) {
+			Assert::type(Land::class, $land);
+		}
+
+		Assert::equal('PKN St. 208/3', $lands[0]->getObjectLabel());
+		Assert::equal('PKN St. 4254', $lands[5]->getObjectLabel());
 	}
 
 }

@@ -19,8 +19,8 @@ final class BuildingUnitDetailHydrator extends AbstractDetailHydrator
 		try {
 			$building = new BuildingUnit(
 				$data['id'],
-				$data['budovaCislo'],
-				$data['typStavby'],
+				$data['jednotkaCislo'],
+				$data['typJednotky'],
 				$data['katUzemiKod'],
 				$data['katUzemi'],
 				$data['obec'],
@@ -28,7 +28,7 @@ final class BuildingUnitDetailHydrator extends AbstractDetailHydrator
 				new Gps($data['gpsLat'], $data['gpsLng'], $data['gpsSource']),
 				$data['okres'],
 				$data['castObce'],
-				$data['zpVyuziti'],
+				$data['vyuziti'],
 				$data['addressPointCodes'],
 				$data['podil'],
 				$data['budovaId'],

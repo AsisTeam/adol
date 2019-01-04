@@ -13,7 +13,7 @@ abstract class AbstractPropertyTestCase extends TestCase
 
 	public function setUp(): void
 	{
-		Environment::skip('this test should be run manually (do not forget to fill valid token)');
+		Environment::skip('this test should be run and checked manually (do not forget to fill valid token)');
 	}
 
 }

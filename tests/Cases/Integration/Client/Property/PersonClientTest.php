@@ -23,31 +23,28 @@ class PersonClientTest extends AbstractPropertyTestCase
 
 	public function testFindPerson(): void
 	{
-		Assert::noError(function (): void {
-			$p = new Person('Tomáš', 'Sedláček');
-			$p->setMunicipality('Jičín');
-			$p->setDegreePrefix('Ing.');
+		$p = new Person('Tomáš', 'Sedláček');
+		$p->setMunicipality('Praha');
+		$p->setDegreePrefix('Ing.');
 
-			$this->client->findPerson($p);
-		});
+		$persons = $this->client->findPerson($p);
+		Assert::count(5, $persons);
 	}
 
 	public function testGetPerson(): void
 	{
-		Assert::noError(function (): void {
-			$p = new Person('Tomáš', 'Sedláček');
-			$p->setMunicipality('Praha');
-			$p->setDegreePrefix('Ing.');
+		$p = new Person('Tomáš', 'Sedláček');
+		$p->setMunicipality('Praha');
+		$p->setDegreePrefix('Ing.');
 
-			$this->client->getPerson($p);
-		});
+		$persons = $this->client->getPerson($p);
+		Assert::count(2, $persons);
 	}
 
-	public function testGetSites(): void
+	public function testGetLands(): void
 	{
-		Assert::noError(function (): void {
-			$this->client->getSites(538364604);
-		});
+		$lands = $this->client->getLands(538364604);
+		Assert::count(6, $lands);
 	}
 
 }

@@ -6,8 +6,8 @@ use AsisTeam\ADOL\Entity\Property\Land;
 use AsisTeam\ADOL\Entity\Property\LandBuildingRelation;
 use AsisTeam\ADOL\Entity\Property\Person;
 use AsisTeam\ADOL\Result\Property\Person\PersonBuildingsHydrator;
+use AsisTeam\ADOL\Result\Property\Person\PersonLandsHydrator;
 use AsisTeam\ADOL\Result\Property\Person\PersonListHydrator;
-use AsisTeam\ADOL\Result\Property\Person\PersonSitesHydrator;
 use AsisTeam\ADOL\Result\Property\Relation\PersonUnitsHydrator;
 
 final class PersonClient extends AbstractPropertyClient
@@ -42,11 +42,11 @@ final class PersonClient extends AbstractPropertyClient
 	/**
 	 * @return Land[]
 	 */
-	public function getSites(int $personId): array
+	public function getLands(int $id): array
 	{
-		$data = $this->request('GET', sprintf($this->getHost() . self::SITES, $personId));
+		$data = $this->request('GET', sprintf($this->getHost() . self::SITES, $id));
 
-		return PersonSitesHydrator::fromArray($data);
+		return PersonLandsHydrator::fromArray($data);
 	}
 
 	/**

@@ -3,10 +3,6 @@
 namespace AsisTeam\ADOL\Tests\Cases\Integration\Client\Property;
 
 use AsisTeam\ADOL\Client\Property\LandClient;
-use AsisTeam\ADOL\Entity\Property\Land;
-use AsisTeam\ADOL\Entity\Property\LandBuildingRelation;
-use AsisTeam\ADOL\Entity\Property\Ownership;
-use AsisTeam\ADOL\Entity\Property\Sentence;
 use Tester\Assert;
 
 require_once __DIR__ . '/../../../../bootstrap.php';
@@ -24,41 +20,34 @@ class LandClientTest extends AbstractPropertyTestCase
 		$this->client = new LandClient($this->token);
 	}
 
-	public function testListSites(): void
+	public function testListLands(): void
 	{
-		Assert::noError(function (): void {
-			$this->client->listLands(261, 'Jičín');
-		});
+		$lands = $this->client->listLands(261, 'Jičín');
+		Assert::count(1, $lands, 'Thre should be one land matching given params');
 	}
 
-	public function testGetSiteDetail(): void
+	public function testGetLandDetail(): void
 	{
-		$resp = $this->client->getLandDetail(1753470604);
-		Assert::type(Land::class, $resp);
+		$land = $this->client->getLandDetail(1753470604);
+		Assert::equal(659541, $land->getCadastralAreaCode());
 	}
 
 	public function testGetSiteOwners(): void
 	{
-		$resp = $this->client->getLandOwnerships(1753470604);
-		foreach ($resp as $ownership) {
-			Assert::type(Ownership::class, $ownership);
-		}
+		$owns = $this->client->getLandOwnerships(1753470604);
+		Assert::count(2, $owns, 'Given property should have 2 owners');
 	}
 
 	public function testSiteBuildings(): void
 	{
-		$resp = $this->client->getLandBuildings(1753470604);
-		foreach ($resp as $building) {
-			Assert::type(LandBuildingRelation::class, $building);
-		}
+		$buildings = $this->client->getLandBuildings(339236231);
+		Assert::count(1, $buildings, 'There should be one building placed on the given parcel');
 	}
 
 	public function testSiteSentences(): void
 	{
-		$resp = $this->client->getLandSentences(1757860604);
-		foreach ($resp as $sentence) {
-			Assert::type(Sentence::class, $sentence);
-		}
+		$sentences = $this->client->getLandSentences(1757860604);
+		Assert::count(3, $sentences, 'Given land should have 3 sentences associated');
 	}
 
 }
