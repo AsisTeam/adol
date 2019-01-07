@@ -30,7 +30,7 @@ class BuildingClientTest extends TestCase
 	public function testFindBuildingInvalidAddressGiven(): void
 	{
 		$client = new BuildingClient('token', Helpers::createHttpClientMock('property/any_error.json'));
-		$client->findBuildings($addr = new Address());
+		$client->findBuildingsByAddress($addr = new Address());
 	}
 
 	public function testFindBuildings(): void
@@ -43,7 +43,7 @@ class BuildingClientTest extends TestCase
 		$addr->setMunicipalityPart('Mlečice');
 		$addr->setHouseNumber('88');
 
-		$list = $client->findBuildings($addr);
+		$list = $client->findBuildingsByAddress($addr);
 		Assert::count(1, $list);
 		Assert::equal(309077408, $list[0]->getId());
 	}

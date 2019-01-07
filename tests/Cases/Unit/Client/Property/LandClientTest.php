@@ -20,13 +20,13 @@ class LandClientTest extends TestCase
 	public function testError(): void
 	{
 		$client = new LandClient('token', Helpers::createHttpClientMock('property/any_error.json'));
-		$client->getLandDetail(0);
+		$client->getLand(0);
 	}
 
 	public function testListSites(): void
 	{
 		$client = new LandClient('token', Helpers::createHttpClientMock('property/land_list.json'));
-		$sites = $client->listLands(15, 'Chodov');
+		$sites = $client->findLands(15, 'Chodov');
 
 		Assert::count(3, $sites);
 		// Site properties to be tested by testGetSiteDetail method
@@ -35,7 +35,7 @@ class LandClientTest extends TestCase
 	public function testGetSiteDetail(): void
 	{
 		$client = new LandClient('token', Helpers::createHttpClientMock('property/land_detail.json'));
-		$site = $client->getLandDetail(2207415101);
+		$site = $client->getLand(2207415101);
 
 		Assert::type(Land::class, $site);
 		Assert::equal(2207415101, $site->getId());

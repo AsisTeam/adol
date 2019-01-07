@@ -29,10 +29,13 @@ abstract class Realty
 	/** @var Gps */
 	protected $gps;
 
-	/** @var Sentence[]  */
+	/** @var Sentence[] */
 	protected $sentences = [];
 
-	/** @var Ownership[] */
+	/** @var string */
+	private $ownerShare = ''; // podilVlastnika
+
+		/** @var Ownership[] */
 	private $ownerships = [];
 
 	public function __construct(
@@ -131,6 +134,16 @@ abstract class Realty
 	public function addOwnership(Ownership $o): void
 	{
 		$this->ownerships[] = $o;
+	}
+
+	public function getOwnerShare(): string
+	{
+		return $this->ownerShare;
+	}
+
+	public function setOwnerShare(string $ownerShare): void
+	{
+		$this->ownerShare = $ownerShare;
 	}
 
 }

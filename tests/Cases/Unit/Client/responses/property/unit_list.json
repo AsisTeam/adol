@@ -1,0 +1,189 @@
+{
+  "status": true,
+  "data": [
+    {
+      "id": 27193231,
+      "jednotkaCislo": "34\/1",
+      "typJednotky": "jednotka vymezen\u00e1 podle z\u00e1kona o vlastnictv\u00ed byt\u016f",
+      "vyuziti": "byt",
+      "budovaCislo": "\u010c.P.35",
+      "katUzemi": "Otruby",
+      "katUzemiKod": 749508,
+      "lv": 3712,
+      "podil": "590\/4720",
+      "obec": "Slan\u00fd",
+      "castObce": "Otruby",
+      "okres": "Kladno",
+      "podilVlastnika": null,
+      "gpsLng": 14.084660260963,
+      "gpsLat": 50.251464390125,
+      "gpsSource": "building",
+      "budovaId": 60355231,
+      "addressPointCodes": [
+        5998735
+      ],
+      "vlastnici": null
+    },
+    {
+      "id": 27194231,
+      "jednotkaCislo": "34\/2",
+      "typJednotky": "jednotka vymezen\u00e1 podle z\u00e1kona o vlastnictv\u00ed byt\u016f",
+      "vyuziti": "byt",
+      "budovaCislo": "\u010c.P.35",
+      "katUzemi": "Otruby",
+      "katUzemiKod": 749508,
+      "lv": 3712,
+      "podil": "590\/4720",
+      "obec": "Slan\u00fd",
+      "castObce": "Otruby",
+      "okres": "Kladno",
+      "podilVlastnika": null,
+      "gpsLng": 14.084660260963,
+      "gpsLat": 50.251464390125,
+      "gpsSource": "building",
+      "budovaId": 60355231,
+      "addressPointCodes": [
+        5998735
+      ],
+      "vlastnici": null
+    },
+    {
+      "id": 27195231,
+      "jednotkaCislo": "34\/3",
+      "typJednotky": "jednotka vymezen\u00e1 podle z\u00e1kona o vlastnictv\u00ed byt\u016f",
+      "vyuziti": "byt",
+      "budovaCislo": "\u010c.P.35",
+      "katUzemi": "Otruby",
+      "katUzemiKod": 749508,
+      "lv": 3701,
+      "podil": "590\/4720",
+      "obec": "Slan\u00fd",
+      "castObce": "Otruby",
+      "okres": "Kladno",
+      "podilVlastnika": null,
+      "gpsLng": 14.084660260963,
+      "gpsLat": 50.251464390125,
+      "gpsSource": "building",
+      "budovaId": 60355231,
+      "addressPointCodes": [
+        5998735
+      ],
+      "vlastnici": null
+    },
+    {
+      "id": 27196231,
+      "jednotkaCislo": "34\/4",
+      "typJednotky": "jednotka vymezen\u00e1 podle z\u00e1kona o vlastnictv\u00ed byt\u016f",
+      "vyuziti": "byt",
+      "budovaCislo": "\u010c.P.35",
+      "katUzemi": "Otruby",
+      "katUzemiKod": 749508,
+      "lv": 3700,
+      "podil": "590\/4720",
+      "obec": "Slan\u00fd",
+      "castObce": "Otruby",
+      "okres": "Kladno",
+      "podilVlastnika": null,
+      "gpsLng": 14.084660260963,
+      "gpsLat": 50.251464390125,
+      "gpsSource": "building",
+      "budovaId": 60355231,
+      "addressPointCodes": [
+        5998735
+      ],
+      "vlastnici": null
+    },
+    {
+      "id": 27197231,
+      "jednotkaCislo": "35\/5",
+      "typJednotky": "jednotka vymezen\u00e1 podle z\u00e1kona o vlastnictv\u00ed byt\u016f",
+      "vyuziti": "byt",
+      "budovaCislo": "\u010c.P.35",
+      "katUzemi": "Otruby",
+      "katUzemiKod": 749508,
+      "lv": 3695,
+      "podil": "590\/4720",
+      "obec": "Slan\u00fd",
+      "castObce": "Otruby",
+      "okres": "Kladno",
+      "podilVlastnika": null,
+      "gpsLng": 14.084660260963,
+      "gpsLat": 50.251464390125,
+      "gpsSource": "building",
+      "budovaId": 60355231,
+      "addressPointCodes": [
+        5998743
+      ],
+      "vlastnici": null
+    },
+    {
+      "id": 27198231,
+      "jednotkaCislo": "35\/6",
+      "typJednotky": "jednotka vymezen\u00e1 podle z\u00e1kona o vlastnictv\u00ed byt\u016f",
+      "vyuziti": "byt",
+      "budovaCislo": "\u010c.P.35",
+      "katUzemi": "Otruby",
+      "katUzemiKod": 749508,
+      "lv": 3712,
+      "podil": "590\/4720",
+      "obec": "Slan\u00fd",
+      "castObce": "Otruby",
+      "okres": "Kladno",
+      "podilVlastnika": null,
+      "gpsLng": 14.084660260963,
+      "gpsLat": 50.251464390125,
+      "gpsSource": "building",
+      "budovaId": 60355231,
+      "addressPointCodes": [
+        5998743
+      ],
+      "vlastnici": null
+    },
+    {
+      "id": 27199231,
+      "jednotkaCislo": "35\/7",
+      "typJednotky": "jednotka vymezen\u00e1 podle z\u00e1kona o vlastnictv\u00ed byt\u016f",
+      "vyuziti": "byt",
+      "budovaCislo": "\u010c.P.35",
+      "katUzemi": "Otruby",
+      "katUzemiKod": 749508,
+      "lv": 3695,
+      "podil": "590\/4720",
+      "obec": "Slan\u00fd",
+      "castObce": "Otruby",
+      "okres": "Kladno",
+      "podilVlastnika": null,
+      "gpsLng": 14.084660260963,
+      "gpsLat": 50.251464390125,
+      "gpsSource": "building",
+      "budovaId": 60355231,
+      "addressPointCodes": [
+        5998743
+      ],
+      "vlastnici": null
+    },
+    {
+      "id": 27200231,
+      "jednotkaCislo": "35\/8",
+      "typJednotky": "jednotka vymezen\u00e1 podle z\u00e1kona o vlastnictv\u00ed byt\u016f",
+      "vyuziti": "byt",
+      "budovaCislo": "\u010c.P.35",
+      "katUzemi": "Otruby",
+      "katUzemiKod": 749508,
+      "lv": 3699,
+      "podil": "590\/4720",
+      "obec": "Slan\u00fd",
+      "castObce": "Otruby",
+      "okres": "Kladno",
+      "podilVlastnika": null,
+      "gpsLng": 14.084660260963,
+      "gpsLat": 50.251464390125,
+      "gpsSource": "building",
+      "budovaId": 60355231,
+      "addressPointCodes": [
+        5998743
+      ],
+      "vlastnici": null
+    }
+  ]
+}

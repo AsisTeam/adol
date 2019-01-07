@@ -1,0 +1,29 @@
+{
+  "status": true,
+  "data": {
+    "id": 88606201,
+    "vlastnici": [
+      {
+        "jmeno0": "Kunc Ond\u0159ej",
+        "adresa": "Pod Chrasti\u0161ovem 189, Jankov, 25703 Jankov",
+        "podil": "1\/1",
+        "typPrav": "Vlastnick\u00e9 pr\u00e1vo",
+        "adress": {
+          "ulice": "Pod Chrasti\u0161ovem",
+          "cisloDomovni": "189",
+          "castObce": "Jankov",
+          "cisloOrientacni": null,
+          "obec": "Jankov",
+          "psc": "25703"
+        },
+        "jmeno": {
+          "krestniJmeno": "Ond\u0159ej",
+          "prijmeni": "Kunc",
+          "titulPred": null,
+          "titulZa": null
+        },
+        "nazev": null
+      }
+    ]
+  }
+}

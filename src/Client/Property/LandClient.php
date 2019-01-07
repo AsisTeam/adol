@@ -23,7 +23,7 @@ final class LandClient extends AbstractPropertyClient
 	/**
 	 * @return Land[]
 	 */
-	public function listLands(int $kmenoveCislo, string $cadastralAreaName): array
+	public function findLands(int $kmenoveCislo, string $cadastralAreaName): array
 	{
 		$area = urlencode($cadastralAreaName);
 		$data = $this->request('GET', sprintf($this->getHost() . self::LIST, $kmenoveCislo, $area));
@@ -31,7 +31,7 @@ final class LandClient extends AbstractPropertyClient
 		return LandListHydrator::fromArray($data);
 	}
 
-	public function getLandDetail(int $id): Land
+	public function getLand(int $id): Land
 	{
 		$data = $this->request('GET', sprintf($this->getHost() . self::DETAIL, $id));
 

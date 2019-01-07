@@ -17,7 +17,7 @@ final class BuildingUnitDetailHydrator extends AbstractDetailHydrator
 	public static function fromArray(array $data): BuildingUnit
 	{
 		try {
-			$building = new BuildingUnit(
+			$unit = new BuildingUnit(
 				$data['id'],
 				$data['jednotkaCislo'],
 				$data['typJednotky'],
@@ -35,9 +35,10 @@ final class BuildingUnitDetailHydrator extends AbstractDetailHydrator
 				$data['budovaCislo']
 			);
 
-			$building->setOwnerships(OwnershipListHydrator::fromArray($data));
+			$unit->setOwnerShare($data['podilVlastnika'] ?? '');
+			$unit->setOwnerships(OwnershipListHydrator::fromArray($data));
 
-			return $building;
+			return $unit;
 		} catch (Throwable $e) {
 			self::throwHydrationError($e, $data);
 		}

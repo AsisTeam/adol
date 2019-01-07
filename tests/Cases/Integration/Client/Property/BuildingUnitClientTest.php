@@ -3,7 +3,6 @@
 namespace AsisTeam\ADOL\Tests\Cases\Integration\Client\Property;
 
 use AsisTeam\ADOL\Client\Property\BuildingUnitClient;
-use AsisTeam\ADOL\Entity\Property\Address;
 use Tester\Assert;
 
 require_once __DIR__ . '/../../../../bootstrap.php';
@@ -23,13 +22,7 @@ class BuildingUnitClientTest extends AbstractPropertyTestCase
 
 	public function testFindBuildingUnits(): void
 	{
-		$addr = new Address();
-		$addr->setRegion('Kladno');
-		$addr->setMunicipality('Slaný');
-		$addr->setMunicipalityPart('Otruby');
-		$addr->setHouseNumber('35');
-
-		$units = $this->client->findBuildingUnits($addr);
+		$units = $this->client->findBuildingUnits('Kladno', 'Slaný', 'Otruby', '35');
 		Assert::count(8, $units);
 	}
 

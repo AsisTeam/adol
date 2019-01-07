@@ -2,13 +2,14 @@
 
 namespace AsisTeam\ADOL\Client\Property;
 
+use AsisTeam\ADOL\Entity\Property\Building;
+use AsisTeam\ADOL\Entity\Property\BuildingUnit;
 use AsisTeam\ADOL\Entity\Property\Land;
-use AsisTeam\ADOL\Entity\Property\LandBuildingRelation;
 use AsisTeam\ADOL\Entity\Property\Person;
 use AsisTeam\ADOL\Result\Property\Person\PersonBuildingsHydrator;
 use AsisTeam\ADOL\Result\Property\Person\PersonLandsHydrator;
 use AsisTeam\ADOL\Result\Property\Person\PersonListHydrator;
-use AsisTeam\ADOL\Result\Property\Relation\PersonUnitsHydrator;
+use AsisTeam\ADOL\Result\Property\Person\PersonUnitsHydrator;
 
 final class PersonClient extends AbstractPropertyClient
 {
@@ -50,7 +51,7 @@ final class PersonClient extends AbstractPropertyClient
 	}
 
 	/**
-	 * @return LandBuildingRelation[]
+	 * @return Building[]
 	 */
 	public function getBuildings(int $personId): array
 	{
@@ -60,7 +61,7 @@ final class PersonClient extends AbstractPropertyClient
 	}
 
 	/**
-	 * @return LandBuildingRelation[]
+	 * @return BuildingUnit[]
 	 */
 	public function getUnits(int $personId): array
 	{

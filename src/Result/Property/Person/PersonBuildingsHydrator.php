@@ -2,21 +2,28 @@
 
 namespace AsisTeam\ADOL\Result\Property\Person;
 
-use AsisTeam\ADOL\Entity\Property\LandBuildingRelation;
+use AsisTeam\ADOL\Entity\Property\Building;
+use AsisTeam\ADOL\Result\Property\Building\BuildingDetailHydrator;
 
 final class PersonBuildingsHydrator
 {
 
 	/**
 	 * @param mixed[] $data
-	 * @return LandBuildingRelation[]
+	 * @return Building[]
 	 */
 	public static function fromArray(array $data): array
 	{
-		// TODO - test
+		if (!array_key_exists('budovy', $data)) {
+			return [];
+		}
 
-		/** @var LandBuildingRelation[] $data */
-		return $data;
+		$buildings = [];
+		foreach ($data['budovy'] as $item) {
+			$buildings[] = BuildingDetailHydrator::fromArray($item);
+		}
+
+		return $buildings;
 	}
 
 }

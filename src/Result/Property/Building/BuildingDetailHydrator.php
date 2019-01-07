@@ -23,15 +23,16 @@ final class BuildingDetailHydrator extends AbstractDetailHydrator
 				$data['typStavby'],
 				$data['katUzemiKod'],
 				$data['katUzemi'],
-				$data['obec'],
+				$data['obec'] ?? '',
 				$data['lv'],
 				new Gps($data['gpsLat'], $data['gpsLng'], $data['gpsSource']),
-				$data['okres'],
-				$data['castObce'],
+				$data['okres'] ?? '',
+				$data['castObce'] ?? '',
 				$data['zpVyuziti'],
-				$data['addressPointCodes'],
+				$data['addressPointCodes']
 			);
 
+			$building->setOwnerShare($data['podilVlastnika'] ?? '');
 			$building->setOwnerships(OwnershipListHydrator::fromArray($data));
 
 			return $building;

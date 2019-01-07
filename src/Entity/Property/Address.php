@@ -51,6 +51,27 @@ final class Address
 		return $addr;
 	}
 
+	public static function fromSearchParams(
+		string $region,
+		string $municipality,
+		string $municipalityPart,
+		string $houseNumber, // popisne cislo
+		?string $registrationNumber = null // evidencni cislo
+	): self
+	{
+		$addr = new self();
+		$addr->setRegion($region);
+		$addr->setMunicipality($municipality);
+		$addr->setMunicipalityPart($municipalityPart);
+		$addr->setHouseNumber($houseNumber);
+
+		if ($registrationNumber !== null) {
+			$addr->setRegistrationNumber($registrationNumber);
+		}
+
+		return $addr;
+	}
+
 	public function toString(): string
 	{
 		$out = $this->street . ' ' . $this->houseNumber;

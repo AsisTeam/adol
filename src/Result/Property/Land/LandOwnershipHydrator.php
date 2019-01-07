@@ -17,7 +17,7 @@ final class LandOwnershipHydrator
 	public static function fromArray(array $data): array
 	{
 		if (!array_key_exists('vlastnici', $data)) {
-			throw new ResponseException('Mandatory "vlastnici" field missing in response data.');
+			return [];
 		}
 
 		$ownerships = [];

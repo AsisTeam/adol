@@ -26,7 +26,23 @@ final class BuildingClient extends AbstractPropertyClient
 	/**
 	 * @return Building[]
 	 */
-	public function findBuildings(Address $addr): array
+	public function findBuildings(
+		string $region,
+		string $municipality,
+		string $municipalityPart,
+		string $houseNumber, // popisne cislo
+		?string $registrationNumber = null // evidencni cislo
+	): array
+	{
+		$addr = Address::fromSearchParams($region, $municipality, $municipalityPart, $houseNumber, $registrationNumber);
+
+		return $this->findBuildingsByAddress($addr);
+	}
+
+	/**
+	 * @return Building[]
+	 */
+	public function findBuildingsByAddress(Address $addr): array
 	{
 		$data = $this->request('GET', $this->getHost() . self::FIND . '?' . $this->createAddressQuery($addr));
 

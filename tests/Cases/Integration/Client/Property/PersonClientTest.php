@@ -47,6 +47,18 @@ class PersonClientTest extends AbstractPropertyTestCase
 		Assert::count(6, $lands);
 	}
 
+	public function testGetBuildings(): void
+	{
+		$buildings = $this->client->getBuildings(538364604);
+		Assert::count(3, $buildings);
+	}
+
+	public function testGetBuildingUnits(): void
+	{
+		$units = $this->client->getUnits(4857136101);
+		Assert::count(2, $units);
+	}
+
 }
 
 (new PersonClientTest())->run();

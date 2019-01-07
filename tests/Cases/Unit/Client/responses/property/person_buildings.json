@@ -1,0 +1,66 @@
+{
+  "status": true,
+  "data": {
+    "osobaId": 538364604,
+    "budovy": [
+      {
+        "id": 267516604,
+        "budovaCislo": "Č.P.641",
+        "obec": "Jičín",
+        "castObce": "Valdické Předměstí",
+        "katUzemi": "Jičín",
+        "katUzemiKod": 659541,
+        "lv": 146,
+        "typStavby": "budova s \u010d\u00edslem popisn\u00fdm",
+        "zpVyuziti": "objekt k bydlení",
+        "okres": "Jičín",
+        "podilVlastnika": "1/2",
+        "gpsLat": 50.443212793847,
+        "gpsLng": 15.357773502043,
+        "gpsSource": "building",
+        "addressPointCodes": [
+          17528895
+        ],
+        "vlastnici": []
+      },
+      {
+        "id": 269692604,
+        "budovaCislo": "Č.P.31",
+        "obec": "Jičín",
+        "castObce": "Holínské Předměstí",
+        "katUzemi": "Jičín",
+        "katUzemiKod": 659541,
+        "lv": 9110,
+        "typStavby": "budova s číslem popisným",
+        "zpVyuziti": "stavba pro administrativu",
+        "okres": "Jičín",
+        "podilVlastnika": "1/1",
+        "gpsLat": 50.438607420736,
+        "gpsLng": 15.35368860387,
+        "gpsSource": "building",
+        "addressPointCodes": [
+          25337670
+        ],
+        "vlastnici": []
+      },
+      {
+        "id": 497115604,
+        "budovaCislo": "bez Č.P./Č.E.",
+        "obec": null,
+        "castObce": null,
+        "katUzemi": "Jičín",
+        "katUzemiKod": 659541,
+        "lv": 9110,
+        "typStavby": "budova bez čísla popisného nebo evidenčního",
+        "zpVyuziti": "garáž",
+        "okres": null,
+        "podilVlastnika": "1/1",
+        "gpsLat": 50.438421332524,
+        "gpsLng": 15.353652426244,
+        "gpsSource": "building",
+        "addressPointCodes": [],
+        "vlastnici": []
+      }
+    ]
+  }
+}

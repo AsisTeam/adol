@@ -3,7 +3,6 @@
 namespace AsisTeam\ADOL\Result\Property\Person;
 
 use AsisTeam\ADOL\Entity\Property\Land;
-use AsisTeam\ADOL\Exception\ResponseException;
 use AsisTeam\ADOL\Result\Property\Land\LandDetailHydrator;
 
 final class PersonLandsHydrator
@@ -16,7 +15,7 @@ final class PersonLandsHydrator
 	public static function fromArray(array $data): array
 	{
 		if (!array_key_exists('parcely', $data)) {
-			throw new ResponseException('Returned data does not contain mandatory "parcely" key');
+			return [];
 		}
 
 		$lands = [];

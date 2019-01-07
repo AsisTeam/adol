@@ -22,13 +22,13 @@ class LandClientTest extends AbstractPropertyTestCase
 
 	public function testListLands(): void
 	{
-		$lands = $this->client->listLands(261, 'Jičín');
+		$lands = $this->client->findLands(261, 'Jičín');
 		Assert::count(1, $lands, 'Thre should be one land matching given params');
 	}
 
 	public function testGetLandDetail(): void
 	{
-		$land = $this->client->getLandDetail(1753470604);
+		$land = $this->client->getLand(1753470604);
 		Assert::equal(659541, $land->getCadastralAreaCode());
 	}
 

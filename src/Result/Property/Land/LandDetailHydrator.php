@@ -34,6 +34,7 @@ final class LandDetailHydrator extends AbstractDetailHydrator
 				new Bpej($data['bpejCelkem'], $data['bpejPrumerNaMetr'], $data['bpejVymera'])
 			);
 
+			$land->setOwnerShare($data['podilVlastnika'] ?? '');
 			$land->setOwnerships(OwnershipListHydrator::fromArray($data));
 
 			return $land;
