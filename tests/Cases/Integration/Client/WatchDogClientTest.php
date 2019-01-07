@@ -5,6 +5,7 @@ namespace AsisTeam\ADOL\Tests\Cases\Integration\Client;
 use AsisTeam\ADOL\Client\WatchDogClient;
 use AsisTeam\ADOL\Entity\WatchDog\Building;
 use AsisTeam\ADOL\Entity\WatchDog\Land;
+use AsisTeam\ADOL\Entity\WatchDog\Realty;
 use Tester\Assert;
 use Tester\Environment;
 use Tester\TestCase;
@@ -25,12 +26,12 @@ class WatchDogClientTest extends TestCase
 
 	public function testCrud(): void
 	{
-		$this->clear();
+		$this->clearAll();
 
 		$records = $this->client->list(0);
 		Assert::count(0, $records);
 
-		$insertion = $this->client->insert(Land::create(549193, Realty::EVIDENCE_PKN, true, 5));
+		$insertion = $this->client->insert(Land::create(659541, Realty::EVIDENCE_PKN, true, 5));
 		Assert::true((int) $insertion->getId() > 0);
 
 		$record = $this->client->detail($insertion->getId());

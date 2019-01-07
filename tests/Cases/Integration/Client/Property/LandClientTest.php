@@ -20,31 +20,31 @@ class LandClientTest extends AbstractPropertyTestCase
 		$this->client = new LandClient($this->token);
 	}
 
-	public function testListLands(): void
+	public function testFindLands(): void
 	{
 		$lands = $this->client->findLands(261, 'Jičín');
 		Assert::count(1, $lands, 'Thre should be one land matching given params');
 	}
 
-	public function testGetLandDetail(): void
+	public function testGetLand(): void
 	{
 		$land = $this->client->getLand(1753470604);
 		Assert::equal(659541, $land->getCadastralAreaCode());
 	}
 
-	public function testGetSiteOwners(): void
+	public function testGetOwnerships(): void
 	{
 		$owns = $this->client->getLandOwnerships(1753470604);
 		Assert::count(2, $owns, 'Given property should have 2 owners');
 	}
 
-	public function testSiteBuildings(): void
+	public function testGetBuilding(): void
 	{
-		$buildings = $this->client->getLandBuildings(339236231);
-		Assert::count(1, $buildings, 'There should be one building placed on the given parcel');
+		$building = $this->client->getBuilding(339236231);
+		Assert::equal(60355231, $building->getId());
 	}
 
-	public function testSiteSentences(): void
+	public function testGetSentences(): void
 	{
 		$sentences = $this->client->getLandSentences(1757860604);
 		Assert::count(3, $sentences, 'Given land should have 3 sentences associated');

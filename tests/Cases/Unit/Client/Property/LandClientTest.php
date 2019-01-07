@@ -19,11 +19,11 @@ class LandClientTest extends TestCase
 	 */
 	public function testError(): void
 	{
-		$client = new LandClient('token', Helpers::createHttpClientMock('property/any_error.json'));
+		$client = new LandClient('token', Helpers::createHttpClientMock('property/error.json'));
 		$client->getLand(0);
 	}
 
-	public function testListSites(): void
+	public function testFindLands(): void
 	{
 		$client = new LandClient('token', Helpers::createHttpClientMock('property/land_list.json'));
 		$sites = $client->findLands(15, 'Chodov');
@@ -32,7 +32,7 @@ class LandClientTest extends TestCase
 		// Site properties to be tested by testGetSiteDetail method
 	}
 
-	public function testGetSiteDetail(): void
+	public function testGetLand(): void
 	{
 		$client = new LandClient('token', Helpers::createHttpClientMock('property/land_detail.json'));
 		$site = $client->getLand(2207415101);
@@ -60,10 +60,10 @@ class LandClientTest extends TestCase
 		Assert::equal('land', $site->getGps()->getSource());
 	}
 
-	public function testGetSiteOwnership(): void
+	public function testGetOwnerships(): void
 	{
 		$client = new LandClient('token', Helpers::createHttpClientMock('property/land_ownership.json'));
-		$owns = $client->getLandOwnerships(2207415101);
+		$owns = $client->getOwnerships(2207415101);
 
 		Assert::count(1, $owns);
 		$o = $owns[0];
@@ -75,27 +75,27 @@ class LandClientTest extends TestCase
 		Assert::equal('Květnového vítězství 60/13, Chodov, 14900 Praha', $o->getAddress());
 	}
 
-	public function testGetSiteBuildings(): void
+	public function testGetBuilding(): void
 	{
-		$client = new LandClient('token', Helpers::createHttpClientMock('property/land_buildings.json'));
-		$buildings = $client->getLandBuildings(1757860604);
+		$client = new LandClient('token', Helpers::createHttpClientMock('property/land_building.json'));
+		$building = $client->getBuilding(339236231);
 
-		Assert::count(2, $buildings);
-		foreach ($buildings as $s) {
-			Assert::equal(1757860604, $s->getLandId());
-		}
-
-		Assert::equal(5568585825, $buildings[0]->getBuildingId());
-		Assert::equal('Č.P.1', $buildings[0]->getBuildingLabel());
-
-		Assert::equal(5568585831, $buildings[1]->getBuildingId());
-		Assert::equal('Č.P.3', $buildings[1]->getBuildingLabel());
+		Assert::equal(60355231, $building->getId());
+		Assert::equal('Č.P.34,35', $building->getObjectLabel());
+		Assert::equal('budova s číslem popisným', $building->getObjectType());
+		Assert::equal('bytový dům', $building->getUsage());
+		Assert::equal('Kladno', $building->getRegion());
+		Assert::equal('Slaný', $building->getMunicipality());
+		Assert::equal('Otruby', $building->getMunicipalityPart());
+		Assert::equal(749508, $building->getCadastralAreaCode());
+		Assert::equal(3692, $building->getCertificateOfTitle());
+		Assert::equal([5998735, 5998743], $building->getAddressPointCodes());
 	}
 
 	public function testGetSiteSentences(): void
 	{
 		$client = new LandClient('token', Helpers::createHttpClientMock('property/land_sentences.json'));
-		$sentences = $client->getLandSentences(1757860604);
+		$sentences = $client->getSentences(1757860604);
 
 		Assert::count(3, $sentences);
 		foreach ($sentences as $s) {

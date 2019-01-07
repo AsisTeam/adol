@@ -21,7 +21,7 @@ class PersonClientTest extends TestCase
 	 */
 	public function testError(): void
 	{
-		$client = new PersonClient('token', Helpers::createHttpClientMock('property/any_error.json'));
+		$client = new PersonClient('token', Helpers::createHttpClientMock('property/error.json'));
 		$client->findPerson(new Person('', ''));
 	}
 

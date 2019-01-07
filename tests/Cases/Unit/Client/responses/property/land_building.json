@@ -1,0 +1,27 @@
+{
+  "status": true,
+  "data": {
+    "parcelaId": 339236231,
+    "budova": {
+      "id": 60355231,
+      "budovaCislo": "Č.P.34,35",
+      "obec": "Slaný",
+      "castObce": "Otruby",
+      "katUzemi": "Otruby",
+      "katUzemiKod": 749508,
+      "lv": 3692,
+      "typStavby": "budova s číslem popisným",
+      "zpVyuziti": "bytový dům",
+      "okres": "Kladno",
+      "podilVlastnika": null,
+      "gpsLat": 50.251464390125,
+      "gpsLng": 14.084660260963,
+      "gpsSource": "building",
+      "addressPointCodes": [
+        5998735,
+        5998743
+      ],
+      "vlastnici": []
+    }
+  }
+}

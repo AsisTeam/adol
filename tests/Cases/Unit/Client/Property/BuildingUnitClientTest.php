@@ -20,7 +20,7 @@ class BuildingUnitClientTest extends TestCase
 	 */
 	public function testError(): void
 	{
-		$client = new BuildingUnitClient('token', Helpers::createHttpClientMock('property/any_error.json'));
+		$client = new BuildingUnitClient('token', Helpers::createHttpClientMock('property/error.json'));
 		$client->getSentences(0);
 	}
 

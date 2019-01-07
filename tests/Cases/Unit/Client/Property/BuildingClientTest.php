@@ -20,7 +20,7 @@ class BuildingClientTest extends TestCase
 	 */
 	public function testError(): void
 	{
-		$client = new BuildingClient('token', Helpers::createHttpClientMock('property/any_error.json'));
+		$client = new BuildingClient('token', Helpers::createHttpClientMock('property/error.json'));
 		$client->getBuilding(0);
 	}
 
@@ -29,7 +29,7 @@ class BuildingClientTest extends TestCase
 	 */
 	public function testFindBuildingInvalidAddressGiven(): void
 	{
-		$client = new BuildingClient('token', Helpers::createHttpClientMock('property/any_error.json'));
+		$client = new BuildingClient('token', Helpers::createHttpClientMock('property/error.json'));
 		$client->findBuildingsByAddress($addr = new Address());
 	}
 

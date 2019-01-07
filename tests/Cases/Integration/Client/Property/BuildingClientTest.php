@@ -43,7 +43,7 @@ class BuildingClientTest extends AbstractPropertyTestCase
 	public function testGetUnits(): void
 	{
 		$units = $this->client->getUnits(309017408);
-		Assert::count(6, $units);
+		Assert::count(7, $units);
 	}
 
 	public function testGetLands(): void
