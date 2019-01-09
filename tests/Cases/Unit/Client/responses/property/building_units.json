@@ -1,35 +1,168 @@
 {
   "status": true,
   "data": {
-    "budovaId": "309017408",
+    "budovaId": 309017408,
     "jednotky": [
       {
-        "id": "47189408",
-        "jednotkaCislo": "88/1"
+        "id": 47189408,
+        "jednotkaCislo": "88\/1",
+        "typJednotky": "jednotka vymezen\u00e1 podle z\u00e1kona o vlastnictv\u00ed byt\u016f",
+        "vyuziti": "byt",
+        "budovaCislo": "\u010c.P.88",
+        "katUzemi": "Mle\u010dice",
+        "katUzemiKod": 697290,
+        "lv": 295,
+        "podil": "7092\/43824",
+        "obec": "Mle\u010dice",
+        "castObce": "Mle\u010dice",
+        "okres": "Rokycany",
+        "podilVlastnika": null,
+        "gpsLng": 13.695816233572,
+        "gpsLat": 49.921606949093,
+        "gpsSource": "building",
+        "budovaId": 309017408,
+        "addressPointCodes": [
+          7126522
+        ],
+        "vlastnici": null
       },
       {
-        "id": "47190 408",
-        "jednotkaCislo": "88/2"
+        "id": 47190408,
+        "jednotkaCislo": "88\/2",
+        "typJednotky": "jednotka vymezen\u00e1 podle z\u00e1kona o vlastnictv\u00ed byt\u016f",
+        "vyuziti": "byt",
+        "budovaCislo": "\u010c.P.88",
+        "katUzemi": "Mle\u010dice",
+        "katUzemiKod": 697290,
+        "lv": 295,
+        "podil": "7092\/43824",
+        "obec": "Mle\u010dice",
+        "castObce": "Mle\u010dice",
+        "okres": "Rokycany",
+        "podilVlastnika": null,
+        "gpsLng": 13.695816233572,
+        "gpsLat": 49.921606949093,
+        "gpsSource": "building",
+        "budovaId": 309017408,
+        "addressPointCodes": [
+          7126522
+        ],
+        "vlastnici": null
       },
       {
-        "id": "47191408",
-        "jednotkaCislo": "88/3"
+        "id": 47191408,
+        "jednotkaCislo": "88\/3",
+        "typJednotky": "jednotka vymezen\u00e1 podle z\u00e1kona o vlastnictv\u00ed byt\u016f",
+        "vyuziti": "byt",
+        "budovaCislo": "\u010c.P.88",
+        "katUzemi": "Mle\u010dice",
+        "katUzemiKod": 697290,
+        "lv": 295,
+        "podil": "4182\/43824",
+        "obec": "Mle\u010dice",
+        "castObce": "Mle\u010dice",
+        "okres": "Rokycany",
+        "podilVlastnika": null,
+        "gpsLng": 13.695816233572,
+        "gpsLat": 49.921606949093,
+        "gpsSource": "building",
+        "budovaId": 309017408,
+        "addressPointCodes": [
+          7126522
+        ],
+        "vlastnici": null
       },
       {
-        "id": "47192408",
-        "jednotkaCislo": "88/4"
+        "id": 47192408,
+        "jednotkaCislo": "88\/4",
+        "typJednotky": "jednotka vymezen\u00e1 podle z\u00e1kona o vlastnictv\u00ed byt\u016f",
+        "vyuziti": "byt",
+        "budovaCislo": "\u010c.P.88",
+        "katUzemi": "Mle\u010dice",
+        "katUzemiKod": 697290,
+        "lv": 295,
+        "podil": "7092\/43824",
+        "obec": "Mle\u010dice",
+        "castObce": "Mle\u010dice",
+        "okres": "Rokycany",
+        "podilVlastnika": null,
+        "gpsLng": 13.695816233572,
+        "gpsLat": 49.921606949093,
+        "gpsSource": "building",
+        "budovaId": 309017408,
+        "addressPointCodes": [
+          7126522
+        ],
+        "vlastnici": null
       },
       {
-        "id": "47193408",
-        "jednotkaCislo": "88/5"
+        "id": 47193408,
+        "jednotkaCislo": "88\/5",
+        "typJednotky": "jednotka vymezen\u00e1 podle z\u00e1kona o vlastnictv\u00ed byt\u016f",
+        "vyuziti": "byt",
+        "budovaCislo": "\u010c.P.88",
+        "katUzemi": "Mle\u010dice",
+        "katUzemiKod": 697290,
+        "lv": 295,
+        "podil": "7092\/43824",
+        "obec": "Mle\u010dice",
+        "castObce": "Mle\u010dice",
+        "okres": "Rokycany",
+        "podilVlastnika": null,
+        "gpsLng": 13.695816233572,
+        "gpsLat": 49.921606949093,
+        "gpsSource": "building",
+        "budovaId": 309017408,
+        "addressPointCodes": [
+          7126522
+        ],
+        "vlastnici": null
       },
       {
-        "id": "47194408",
-        "jednotkaCislo": "88/6"
+        "id": 47194408,
+        "jednotkaCislo": "88\/6",
+        "typJednotky": "jednotka vymezen\u00e1 podle z\u00e1kona o vlastnictv\u00ed byt\u016f",
+        "vyuziti": "byt",
+        "budovaCislo": "\u010c.P.88",
+        "katUzemi": "Mle\u010dice",
+        "katUzemiKod": 697290,
+        "lv": 295,
+        "podil": "4182\/43824",
+        "obec": "Mle\u010dice",
+        "castObce": "Mle\u010dice",
+        "okres": "Rokycany",
+        "podilVlastnika": null,
+        "gpsLng": 13.695816233572,
+        "gpsLat": 49.921606949093,
+        "gpsSource": "building",
+        "budovaId": 309017408,
+        "addressPointCodes": [
+          7126522
+        ],
+        "vlastnici": null
       },
       {
-        "id": "47195408",
-        "jednotkaCislo": "88/7"
+        "id": 47195408,
+        "jednotkaCislo": "88\/7",
+        "typJednotky": "jednotka vymezen\u00e1 podle z\u00e1kona o vlastnictv\u00ed byt\u016f",
+        "vyuziti": "byt",
+        "budovaCislo": "\u010c.P.88",
+        "katUzemi": "Mle\u010dice",
+        "katUzemiKod": 697290,
+        "lv": 295,
+        "podil": "7092\/43824",
+        "obec": "Mle\u010dice",
+        "castObce": "Mle\u010dice",
+        "okres": "Rokycany",
+        "podilVlastnika": null,
+        "gpsLng": 13.695816233572,
+        "gpsLat": 49.921606949093,
+        "gpsSource": "building",
+        "budovaId": 309017408,
+        "addressPointCodes": [
+          7126522
+        ],
+        "vlastnici": null
       }
     ]
   }

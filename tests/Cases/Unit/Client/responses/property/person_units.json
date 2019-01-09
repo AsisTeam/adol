@@ -1,4 +1,31 @@
 {
   "status": true,
-  "data": []
+  "data": {
+    "osobaId": 438344502,
+    "jednotky": [
+      {
+        "id": 76709502,
+        "jednotkaCislo": "366/4",
+        "typJednotky": "jednotka vymezená podle zákona o vlastnictví bytů",
+        "vyuziti": "byt",
+        "budovaCislo": "Č.P.364",
+        "katUzemi": "Děčín-Staré Město[625035]",
+        "katUzemiKod": 625035,
+        "lv": 2388,
+        "podil": "806/32536",
+        "obec": "Děčín",
+        "castObce": "Děčín III-Staré Město",
+        "okres": "Děčín",
+        "podilVlastnika": "1/1",
+        "gpsLng": 14.222088695106,
+        "gpsLat": 50.770670688727,
+        "gpsSource": "building",
+        "budovaId": 258991502,
+        "addressPointCodes": [
+          220710
+        ],
+        "vlastnici": null
+      }
+    ]
+  }
 }

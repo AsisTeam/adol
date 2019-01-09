@@ -7,12 +7,10 @@ use AsisTeam\ADOL\Entity\WatchDog\Building;
 use AsisTeam\ADOL\Entity\WatchDog\Land;
 use AsisTeam\ADOL\Entity\WatchDog\Realty;
 use Tester\Assert;
-use Tester\Environment;
-use Tester\TestCase;
 
 require_once __DIR__ . '/../../../bootstrap.php';
 
-class WatchDogClientTest extends TestCase
+class WatchDogClientTest extends AbstractTestCase
 {
 
 	/** @var WatchDogClient */
@@ -20,8 +18,9 @@ class WatchDogClientTest extends TestCase
 
 	public function setUp(): void
 	{
-		$this->client = new WatchDogClient('fill your token here');
-		Environment::skip('this test should be run manually (do not forget to fill valid token)');
+		parent::setUp();
+
+		$this->client = new WatchDogClient($this->token);
 	}
 
 	public function testCrud(): void

@@ -3,11 +3,12 @@
 namespace AsisTeam\ADOL\Tests\Cases\Integration\Client\Property;
 
 use AsisTeam\ADOL\Client\Property\BuildingUnitClient;
+use AsisTeam\ADOL\Tests\Cases\Integration\Client\AbstractTestCase;
 use Tester\Assert;
 
 require_once __DIR__ . '/../../../../bootstrap.php';
 
-class BuildingUnitClientTest extends AbstractPropertyTestCase
+class BuildingUnitClientTest extends AbstractTestCase
 {
 
 	/** @var BuildingUnitClient */

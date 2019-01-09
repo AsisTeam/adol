@@ -94,20 +94,32 @@ class BuildingClientTest extends TestCase
 		$units = $client->getUnits(309017408);
 
 		Assert::count(7, $units);
+
 		Assert::equal(309017408, $units[0]->getBuildingId());
 		Assert::equal(47189408, $units[0]->getId());
-		Assert::equal('88/1', $units[0]->getUnitLabel());
+		Assert::equal('88/1', $units[0]->getObjectLabel());
+
+		// ...
+
+		Assert::equal(309017408, $units[6]->getBuildingId());
+		Assert::equal(47195408, $units[6]->getId());
+		Assert::equal('88/7', $units[6]->getObjectLabel());
 	}
 
 	public function testGetLands(): void
 	{
 		$client = new BuildingClient('token', Helpers::createHttpClientMock('property/building_lands.json'));
-		$units = $client->getLands(309017408);
+		$lands = $client->getLands(309017408);
 
-		Assert::count(1, $units);
-		Assert::equal(309017408, $units[0]->getBuildingId());
-		Assert::equal(1628009408, $units[0]->getLandId());
-		Assert::equal('PKN St. 119', $units[0]->getLandLabel());
+		Assert::count(2, $lands);
+
+		Assert::equal(1203777503, $lands[0]->getId());
+		Assert::equal('PKN 5459/19', $lands[0]->getObjectLabel());
+		Assert::equal(8565, $lands[0]->getCertificateOfTitle());
+
+		Assert::equal(1203778503, $lands[1]->getId());
+		Assert::equal('PKN 5459/20', $lands[1]->getObjectLabel());
+		Assert::equal(8565, $lands[0]->getCertificateOfTitle());
 	}
 
 	public function testGetOwners(): void

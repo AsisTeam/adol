@@ -1,11 +1,49 @@
 {
   "status": true,
   "data": {
-    "budovaId": "309017408",
+    "budovaId": 292623503,
     "parcely": [
       {
-        "id": "1628009408",
-        "parcelaCislo": "PKN St. 119"
+        "id": 1203777503,
+        "parcelaCislo": "PKN 5459/19",
+        "obec": "Chomutov",
+        "katUzemi": "Chomutov I",
+        "katUzemiKod": 652458,
+        "lv": 8565,
+        "vymera": 246,
+        "typParcely": "PKN",
+        "mapovyList": "DKM",
+        "zpUrceniVymery": "Graficky nebo v digitalizovan\u00e9 map\u011b",
+        "druhPoz": "zastav\u011bn\u00e1 plocha a n\u00e1dvo\u0159\u00ed",
+        "podilVlastnika": null,
+        "gpsLat": 50.481114865973,
+        "gpsLng": 13.419791213171,
+        "gpsSource": "land",
+        "bpejCelkem": 0,
+        "bpejPrumerNaMetr": 0,
+        "bpejVymera": 0,
+        "vlastnici": null
+      },
+      {
+        "id": 1203778503,
+        "parcelaCislo": "PKN 5459/20",
+        "obec": "Chomutov",
+        "katUzemi": "Chomutov I",
+        "katUzemiKod": 652458,
+        "lv": 8565,
+        "vymera": 247,
+        "typParcely": "PKN",
+        "mapovyList": "DKM",
+        "zpUrceniVymery": "Graficky nebo v digitalizovan\u00e9 map\u011b",
+        "druhPoz": "zastav\u011bn\u00e1 plocha a n\u00e1dvo\u0159\u00ed",
+        "podilVlastnika": null,
+        "gpsLat": 50.480939219137,
+        "gpsLng": 13.4197892991,
+        "gpsSource": "land",
+        "bpejCelkem": 0,
+        "bpejPrumerNaMetr": 0,
+        "bpejVymera": 0,
+        "vlastnici": null
       }
     ]
   }

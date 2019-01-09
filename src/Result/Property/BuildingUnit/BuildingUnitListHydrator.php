@@ -1,11 +1,10 @@
 <?php declare(strict_types = 1);
 
-namespace AsisTeam\ADOL\Result\Property\Person;
+namespace AsisTeam\ADOL\Result\Property\BuildingUnit;
 
 use AsisTeam\ADOL\Entity\Property\BuildingUnit;
-use AsisTeam\ADOL\Result\Property\BuildingUnit\BuildingUnitDetailHydrator;
 
-final class PersonUnitsHydrator
+final class BuildingUnitListHydrator
 {
 
 	/**
@@ -14,12 +13,9 @@ final class PersonUnitsHydrator
 	 */
 	public static function fromArray(array $data): array
 	{
-		if (!array_key_exists('jednotky', $data) || !is_array($data['jednotky'])) {
-			return [];
-		}
-
 		$units = [];
-		foreach ($data['jednotky'] as $item) {
+
+		foreach ($data as $item) {
 			$units[] = BuildingUnitDetailHydrator::fromArray($item);
 		}
 

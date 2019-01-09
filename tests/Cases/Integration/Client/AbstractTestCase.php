@@ -1,15 +1,15 @@
 <?php declare(strict_types = 1);
 
-namespace AsisTeam\ADOL\Tests\Cases\Integration\Client\Property;
+namespace AsisTeam\ADOL\Tests\Cases\Integration\Client;
 
 use Tester\Environment;
 use Tester\TestCase;
 
-abstract class AbstractPropertyTestCase extends TestCase
+abstract class AbstractTestCase extends TestCase
 {
 
 	/** @var string */
-	protected $token = 'fill your valid token here';
+	protected $token = 'fill your token';
 
 	public function setUp(): void
 	{

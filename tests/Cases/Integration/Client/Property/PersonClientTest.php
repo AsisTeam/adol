@@ -4,11 +4,12 @@ namespace AsisTeam\ADOL\Tests\Cases\Integration\Client\Property;
 
 use AsisTeam\ADOL\Client\Property\PersonClient;
 use AsisTeam\ADOL\Entity\Property\Person;
+use AsisTeam\ADOL\Tests\Cases\Integration\Client\AbstractTestCase;
 use Tester\Assert;
 
 require_once __DIR__ . '/../../../../bootstrap.php';
 
-class PersonClientTest extends AbstractPropertyTestCase
+class PersonClientTest extends AbstractTestCase
 {
 
 	/** @var PersonClient */
@@ -55,8 +56,8 @@ class PersonClientTest extends AbstractPropertyTestCase
 
 	public function testGetBuildingUnits(): void
 	{
-		$units = $this->client->getUnits(4857136101);
-		Assert::count(0, $units);
+		$units = $this->client->getUnits(438344502);
+		Assert::count(1, $units);
 	}
 
 }

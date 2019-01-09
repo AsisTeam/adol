@@ -59,6 +59,7 @@ abstract class AbstractClient
 			throw new ResponseException(sprintf('ADOL server returned %d statusCode', $response->getStatusCode()));
 		}
 
+//		echo $response->getBody()->getContents(); die();
 		$data = json_decode($response->getBody()->getContents(), true);
 		if ($data === null && json_last_error() !== JSON_ERROR_NONE) {
 			throw new ResponseException(sprintf('Invalid response json given. Error: %s', json_last_error_msg()));

@@ -8,7 +8,6 @@ use AsisTeam\ADOL\Entity\Property\Land;
 use AsisTeam\ADOL\Entity\Property\Person;
 use AsisTeam\ADOL\Tests\Cases\Unit\Client\Helpers;
 use Tester\Assert;
-use Tester\Environment;
 use Tester\TestCase;
 
 require_once __DIR__ . '/../../../../bootstrap.php';
@@ -124,10 +123,17 @@ class PersonClientTest extends TestCase
 
 	public function testGetBuildingUnits(): void
 	{
-		Environment::skip('no data provided by API so far.');
-
 		$client = new PersonClient('token', Helpers::createHttpClientMock('property/person_units.json'));
-		$client->getUnits(538364604);
+		$units = $client->getUnits(438344502);
+
+		Assert::count(1, $units);
+
+		Assert::equal(76709502, $units[0]->getId());
+		Assert::equal(258991502, $units[0]->getBuildingId());
+		Assert::equal('366/4', $units[0]->getObjectLabel());
+		Assert::equal('Č.P.364', $units[0]->getBuildingLabel());
+		Assert::equal('1/1', $units[0]->getOwnerShare());
+		Assert::equal('806/32536', $units[0]->getPortion());
 	}
 
 }

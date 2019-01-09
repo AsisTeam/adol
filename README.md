@@ -1,4 +1,4 @@
-# ADOL > property and realty API
+# ADOL API - property and realty API and watchdog
 
 [![Build Status](https://img.shields.io/travis/com/AsisTeam/adol.svg?style=flat-square)](https://travis-ci.com/AsisTeam/adol)
 [![Licence](https://img.shields.io/packagist/l/AsisTeam/adol.svg?style=flat-square)](https://packagist.org/packages/AsisTeam/adol)
@@ -29,41 +29,53 @@ composer require asisteam/adol
 
 ## Overview
 
-This package communicates with ADOL API and allows to perform CRUD calls for realty, estate and insolvency entities.
+This package communicates with following ADOL APIs:
+- [Watchdog](https://github.com/AsisTeam/adol/blob/master/.docs/watchdog.md)
+- [Property](https://github.com/AsisTeam/adol/blob/master/.docs/property.md)
 
-The `RequestException` is being thrown if request is invalid. The request will not be performed.
-`ResponseException` is thrown whenever request has been sent and response from ADOL server contains invalid status or misses some data.
+In order to communicate with ADOL APIs you must have your own private `token` string. This `token` is provided by ADOL.
 
-### API Hlídač nemovitostí - Property watch dog API
+### Basic principles
 
-To be used for registering properties to watch dog, removing from it and listing existing items.
-The `WatchDog` class should be used for communication with ADOL watch dog.
-It provides following methods:
- - insert(IEstate $estate): Insertion
- - list(int $page, ?int $limit = 10): Record[]
- - detail(string $id): Record
- - delete(string $id): void
+For every provided API a separate client class is created (please see `WatchDogClient`, `Property/BuildingClient`, ...).
+In order to create the client, you must instantiate it by passing at least a valid `token` string to it's constructor.
+Or you can replace the default GuzzleHttp client with your custom http client that implements ClientInterface.
+If using GuzzleHttp client you can also pass a third optional constructor parameter, that is a request options array that will be appended to every request made by the http client.
+By using this options array, you can set client timeouts etc. for all client calls. Please see available Guzzle options at http://docs.guzzlephp.org/en/stable/request-options.html.
+
+When doing a call two exceptions can be thrown.
+
+- The `RequestException` is being thrown if request is invalid. The request will not be performed.
+- The `ResponseException` is thrown whenever request has been sent and response from ADOL server contains invalid status or misses some data.
+
+### How to run tests and check code
+
+Code quality assurance: `composer qa`
+Code PHPSTAN: `composer phpstan`
+
+Unit and Integration tests: `composer tests`
+
+Note: As you are charged for all request performed to real API, integration tests are skipped by default. In order to run integration tests edit `tests/Cases/Integration/AbstractTestCase`
+and fill your private `token` and delete `Environment::skip` line in setUp() method.
  
-#### Usage
 
-```php
-// creating client is easy, just provide your auth token
-$watchDog = new WatchDog('fillYourSecretTokenHere');
+### Nette bridge
 
-// adding new property to watch dog
-$land = Land::create(549193, Estate::EVIDENCE_PKN, true, 5);
-// we can add more estate fields if we want to
-$land->name = 'some land name if available';
-$ins = $watchDog->insert($land);
-$watchDogId = $ins->getId();
+You can configure clients as Nette Framework DI services and you will be able to use following services:
 
-// we can get the detail 'Adol\Result\WatchDog\Record' of property if we know it's id
-$record = $watchDog->detail($watchDogId)
+- adol.watchdog
+- adol.property.land
+- adol.property.building
+- adol.property.building_unit
+- adol.property.person
 
-// or we can list multiple records 'Adol\Result\WatchDog\Record' at once
-$records = $watchDog->list(0, 100); // list form 0-100
-
-// to delete record from watch dog, just pass it's id to delete method
-$watchDog->delete($watchDogId);
-
+```
+extensions:
+    adol: AsisTeam\ADOL\Bridges\Nette\DI\AdolExtension
+    
+adol:
+    token: "yourValidTokenString"
+    options: [
+        timeout: 20 
+    ]
 ```

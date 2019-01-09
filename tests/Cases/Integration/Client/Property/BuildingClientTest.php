@@ -3,11 +3,12 @@
 namespace AsisTeam\ADOL\Tests\Cases\Integration\Client\Property;
 
 use AsisTeam\ADOL\Client\Property\BuildingClient;
+use AsisTeam\ADOL\Tests\Cases\Integration\Client\AbstractTestCase;
 use Tester\Assert;
 
 require_once __DIR__ . '/../../../../bootstrap.php';
 
-class BuildingClientTest extends AbstractPropertyTestCase
+class BuildingClientTest extends AbstractTestCase
 {
 
 	/** @var BuildingClient */
@@ -48,8 +49,8 @@ class BuildingClientTest extends AbstractPropertyTestCase
 
 	public function testGetLands(): void
 	{
-		$lands = $this->client->getLands(309017408);
-		Assert::count(1, $lands);
+		$lands = $this->client->getLands(292623503);
+		Assert::count(2, $lands);
 	}
 
 	public function testGetOwners(): void

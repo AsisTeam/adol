@@ -16,6 +16,7 @@ final class AdolExtension extends CompilerExtension
 	public $defaults = [
 		// your private ADOL token
 		'token'   => '',
+		// see all options: http://docs.guzzlephp.org/en/stable/request-options.html
 		'options' => [
 			// max request time
 			'timeout' => 20,

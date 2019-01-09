@@ -3,11 +3,12 @@
 namespace AsisTeam\ADOL\Tests\Cases\Integration\Client\Property;
 
 use AsisTeam\ADOL\Client\Property\LandClient;
+use AsisTeam\ADOL\Tests\Cases\Integration\Client\AbstractTestCase;
 use Tester\Assert;
 
 require_once __DIR__ . '/../../../../bootstrap.php';
 
-class LandClientTest extends AbstractPropertyTestCase
+class LandClientTest extends AbstractTestCase
 {
 
 	/** @var LandClient */
@@ -34,7 +35,7 @@ class LandClientTest extends AbstractPropertyTestCase
 
 	public function testGetOwnerships(): void
 	{
-		$owns = $this->client->getLandOwnerships(1753470604);
+		$owns = $this->client->getOwnerships(1753470604);
 		Assert::count(2, $owns, 'Given property should have 2 owners');
 	}
 
@@ -46,7 +47,7 @@ class LandClientTest extends AbstractPropertyTestCase
 
 	public function testGetSentences(): void
 	{
-		$sentences = $this->client->getLandSentences(1757860604);
+		$sentences = $this->client->getSentences(1757860604);
 		Assert::count(3, $sentences, 'Given land should have 3 sentences associated');
 	}
 

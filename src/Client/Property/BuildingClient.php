@@ -4,14 +4,14 @@ namespace AsisTeam\ADOL\Client\Property;
 
 use AsisTeam\ADOL\Entity\Property\Address;
 use AsisTeam\ADOL\Entity\Property\Building;
-use AsisTeam\ADOL\Entity\Property\BuildingUnitRelation;
-use AsisTeam\ADOL\Entity\Property\LandBuildingRelation;
+use AsisTeam\ADOL\Entity\Property\BuildingUnit;
+use AsisTeam\ADOL\Entity\Property\Land;
 use AsisTeam\ADOL\Entity\Property\Ownership;
 use AsisTeam\ADOL\Entity\Property\Sentence;
 use AsisTeam\ADOL\Result\Property\Building\BuildingDetailHydrator;
+use AsisTeam\ADOL\Result\Property\BuildingUnit\BuildingUnitListHydrator;
 use AsisTeam\ADOL\Result\Property\Common\OwnershipListHydrator;
-use AsisTeam\ADOL\Result\Property\Relation\BuildingLandRelationHydrator;
-use AsisTeam\ADOL\Result\Property\Relation\BuildingUnitRelationHydrator;
+use AsisTeam\ADOL\Result\Property\Land\LandListHydrator;
 
 final class BuildingClient extends AbstractPropertyClient
 {
@@ -70,23 +70,31 @@ final class BuildingClient extends AbstractPropertyClient
 	}
 
 	/**
-	 * @return BuildingUnitRelation[]
+	 * @return BuildingUnit[]
 	 */
 	public function getUnits(int $id): array
 	{
 		$data = $this->request('GET', sprintf($this->getHost() . self::UNITS, $id));
 
-		return BuildingUnitRelationHydrator::fromArray($data);
+		if (!isset($data['jednotky']) || !is_array($data['jednotky'])) {
+			return [];
+		}
+
+		return BuildingUnitListHydrator::fromArray($data['jednotky']);
 	}
 
 	/**
-	 * @return LandBuildingRelation[]
+	 * @return Land[]
 	 */
 	public function getLands(int $id): array
 	{
 		$data = $this->request('GET', sprintf($this->getHost() . self::LANDS, $id));
 
-		return BuildingLandRelationHydrator::fromArray($data);
+		if (!isset($data['parcely']) || !is_array($data['parcely'])) {
+			return [];
+		}
+
+		return LandListHydrator::fromArray($data['parcely']);
 	}
 
 	/**
