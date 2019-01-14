@@ -9,7 +9,7 @@ use AsisTeam\ADOL\Client\Property\PersonClient;
 use AsisTeam\ADOL\Client\WatchDogClient;
 use Nette\DI\CompilerExtension;
 
-final class AdolExtension extends CompilerExtension
+class AdolExtension extends CompilerExtension
 {
 
 	/** @var mixed[] */
