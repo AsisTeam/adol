@@ -23,7 +23,7 @@ final class OwnershipHydrator
 				$name,
 				$address,
 				$data['podil'] ?? '',
-				$data['typPrav'] ?? '',
+				$data['typPrav'] ?? ''
 			);
 		} catch (InvalidArgumentException $e) {
 			throw new ResponseException($e->getMessage(), $e->getCode(), $e);
