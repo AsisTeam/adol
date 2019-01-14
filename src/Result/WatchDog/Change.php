@@ -101,7 +101,7 @@ final class Change
 			$a['subject'],
 			$a['type'],
 			new DateTimeImmutable($a['timeCreated']),
-			new DateTimeImmutable($a['timeChange']),
+			new DateTimeImmutable($a['timeChange'])
 		);
 	}
 

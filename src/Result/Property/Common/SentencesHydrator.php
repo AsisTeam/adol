@@ -31,7 +31,7 @@ final class SentencesHydrator
 					$requestedId,
 					$s['veta'],
 					$s['typVety'] ?? null,
-					$s['jmeno'] ?? null,
+					$s['jmeno'] ?? null
 				);
 			}
 

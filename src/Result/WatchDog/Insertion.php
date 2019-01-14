@@ -55,7 +55,7 @@ final class Insertion
 		return new self(
 			$a['id'],
 			$a['warningMessage'],
-			$a['data'],
+			$a['data']
 		);
 	}
 
