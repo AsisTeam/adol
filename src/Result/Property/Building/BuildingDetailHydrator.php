@@ -28,8 +28,8 @@ final class BuildingDetailHydrator extends AbstractDetailHydrator
 				new Gps($data['gpsLat'], $data['gpsLng'], $data['gpsSource']),
 				$data['okres'] ?? '',
 				$data['castObce'] ?? '',
-				$data['zpVyuziti'],
-				$data['addressPointCodes']
+				$data['zpVyuziti'] ?? '',
+				$data['addressPointCodes'] ?? []
 			);
 
 			$building->setOwnerShare($data['podilVlastnika'] ?? '');

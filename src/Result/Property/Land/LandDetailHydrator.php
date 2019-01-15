@@ -27,10 +27,10 @@ final class LandDetailHydrator extends AbstractDetailHydrator
 				$data['obec'],
 				$data['lv'],
 				new Gps($data['gpsLat'], $data['gpsLng'], $data['gpsSource']),
-				$data['vymera'],
-				$data['mapovyList'],
-				$data['zpUrceniVymery'],
-				$data['druhPoz'],
+				$data['vymera'] ?? 0,
+				$data['mapovyList'] ?? '',
+				$data['zpUrceniVymery'] ?? '',
+				$data['druhPoz'] ?? '',
 				new Bpej($data['bpejCelkem'], $data['bpejPrumerNaMetr'], $data['bpejVymera'])
 			);
 

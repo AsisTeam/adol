@@ -44,8 +44,8 @@ class PersonClientTest extends AbstractTestCase
 
 	public function testGetLands(): void
 	{
-		$lands = $this->client->getLands(538364604);
-		Assert::count(6, $lands);
+		$lands = $this->client->getLands(1002776708);
+		Assert::count(111, $lands);
 	}
 
 	public function testGetBuildings(): void

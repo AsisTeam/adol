@@ -26,11 +26,11 @@ final class BuildingUnitDetailHydrator extends AbstractDetailHydrator
 				$data['obec'],
 				$data['lv'],
 				new Gps($data['gpsLat'], $data['gpsLng'], $data['gpsSource']),
-				$data['okres'],
-				$data['castObce'],
-				$data['vyuziti'],
-				$data['addressPointCodes'],
-				$data['podil'],
+				$data['okres'] ?? '',
+				$data['castObce'] ?? '',
+				$data['vyuziti'] ?? '',
+				$data['addressPointCodes'] ?? [],
+				$data['podil'] ?? '',
 				$data['budovaId'],
 				$data['budovaCislo']
 			);
