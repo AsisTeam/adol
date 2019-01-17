@@ -3,6 +3,7 @@
 namespace AsisTeam\ADOL\Result\WatchDog;
 
 use AsisTeam\ADOL\Exception\InvalidArgumentException;
+use AsisTeam\ADOL\Result\WatchDog\Property\Record;
 use DateTimeImmutable;
 
 final class Change
@@ -43,12 +44,16 @@ final class Change
 	/** @var DateTimeImmutable */
 	private $timeChange;
 
+	/** @var Record|null */
+	private $record;
+
 	public function __construct(
 		string $name,
 		string $subject,
 		string $type,
 		DateTimeImmutable $timeCreated,
-		DateTimeImmutable $timeChange
+		DateTimeImmutable $timeChange,
+		?Record $record = null
 	)
 	{
 		if (!in_array($subject, self::VALID_SUBJECTS, true)) {
@@ -59,9 +64,10 @@ final class Change
 			throw new InvalidArgumentException(sprintf('Invalid PropertyChange::type "%s" given.', $type));
 		}
 
-		$this->name = $name;
+		$this->name        = $name;
 		$this->subject     = $subject;
 		$this->type        = $type;
+		$this->record      = $record;
 		$this->timeCreated = $timeCreated;
 		$this->timeChange  = $timeChange;
 	}
@@ -91,6 +97,11 @@ final class Change
 		return $this->timeChange;
 	}
 
+	public function getRecord(): ?Record
+	{
+		return $this->record;
+	}
+
 	/**
 	 * @param mixed[] $a
 	 */
@@ -101,7 +112,8 @@ final class Change
 			$a['subject'],
 			$a['type'],
 			new DateTimeImmutable($a['timeCreated']),
-			new DateTimeImmutable($a['timeChange'])
+			new DateTimeImmutable($a['timeChange']),
+			isset($a['record']) ? Record::fromArray($a['record']) : null
 		);
 	}
 

@@ -6,7 +6,8 @@ use AsisTeam\ADOL\Client\Property\BuildingClient;
 use AsisTeam\ADOL\Client\Property\BuildingUnitClient;
 use AsisTeam\ADOL\Client\Property\LandClient;
 use AsisTeam\ADOL\Client\Property\PersonClient;
-use AsisTeam\ADOL\Client\WatchDogClient;
+use AsisTeam\ADOL\Client\WatchDog\InsolvencyClient;
+use AsisTeam\ADOL\Client\WatchDog\PropertyClient;
 use Nette\DI\CompilerExtension;
 
 class AdolExtension extends CompilerExtension
@@ -33,8 +34,11 @@ class AdolExtension extends CompilerExtension
 
 		$params = [$config['token'], null, $config['options']];
 
-		$builder->addDefinition($this->prefix('watchdog'))
-			->setFactory(WatchDogClient::class, $params);
+		$builder->addDefinition($this->prefix('watchdog.property'))
+			->setFactory(PropertyClient::class, $params);
+
+		$builder->addDefinition($this->prefix('watchdog.insolvency'))
+			->setFactory(InsolvencyClient::class, $params);
 
 		$builder->addDefinition($this->prefix('property.land'))
 			->setFactory(LandClient::class, $params);

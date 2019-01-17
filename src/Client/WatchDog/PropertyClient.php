@@ -1,14 +1,17 @@
 <?php declare(strict_types = 1);
 
-namespace AsisTeam\ADOL\Client;
+namespace AsisTeam\ADOL\Client\WatchDog;
 
-use AsisTeam\ADOL\Entity\WatchDog\IEstate;
+use AsisTeam\ADOL\Client\AbstractClient;
+use AsisTeam\ADOL\Entity\WatchDog\Property\IEstate;
 use AsisTeam\ADOL\Exception\RequestException;
 use AsisTeam\ADOL\Exception\ResponseException;
+use AsisTeam\ADOL\Result\WatchDog\Change;
 use AsisTeam\ADOL\Result\WatchDog\Insertion;
-use AsisTeam\ADOL\Result\WatchDog\Record;
+use AsisTeam\ADOL\Result\WatchDog\Property\Record;
+use DateTimeImmutable;
 
-final class WatchDogClient extends AbstractClient
+final class PropertyClient extends AbstractClient
 {
 
 	private const API = '/papi/property-watchdog';
@@ -17,6 +20,7 @@ final class WatchDogClient extends AbstractClient
 	private const PATH_INSERT = '/insert';
 	private const PATH_DELETE = '/remove';
 	private const PATH_DETAIL = '/detail';
+	private const PATH_CHANGES = '/changes';
 
 	public function insert(IEstate $estate): Insertion
 	{
@@ -34,14 +38,14 @@ final class WatchDogClient extends AbstractClient
 	 */
 	public function list(int $page, ?int $limit = 10): array
 	{
-		$resp = $this->request('POST', $this->getUrl(self::PATH_LIST), ['form_params' => ['page' => $page, 'limit' => $limit]]);
+		$data = $this->request('POST', $this->getUrl(self::PATH_LIST), ['form_params' => ['page' => $page, 'limit' => $limit]]);
 
-		if (!array_key_exists('records', $resp)) {
+		if (!array_key_exists('records', $data)) {
 			throw new ResponseException('Missing "records" field in "list" response');
 		}
 
 		$out = [];
-		foreach ($resp['records'] as $rec) {
+		foreach ($data['records'] as $rec) {
 			$out[] = Record::fromArray($rec);
 		}
 
@@ -62,6 +66,25 @@ final class WatchDogClient extends AbstractClient
 	public function delete(string $id): void
 	{
 		$this->request('POST', $this->getUrl(self::PATH_DELETE), ['form_params' => ['id' => $id]]);
+	}
+
+	/**
+	 * @return Change[]
+	 */
+	public function changes(DateTimeImmutable $from): array
+	{
+		$data = $this->request('POST', $this->getUrl(self::PATH_CHANGES), ['form_params' => ['from' => $from->format('Y-m-d')]]);
+
+		if (!array_key_exists('changes', $data)) {
+			throw new ResponseException('Missing "changes" field in "changes" response');
+		}
+
+		$out = [];
+		foreach ($data['changes'] as $rec) {
+			$out[] = Change::fromArray($rec);
+		}
+
+		return $out;
 	}
 
 	private function getUrl(string $path): string

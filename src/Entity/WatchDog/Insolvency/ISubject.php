@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace AsisTeam\ADOL\Entity\WatchDog;
+namespace AsisTeam\ADOL\Entity\WatchDog\Insolvency;
 
-interface IEstate
+interface ISubject
 {
 
 	public function isValid(): bool;

@@ -1,10 +1,10 @@
 <?php declare(strict_types = 1);
 
-namespace AsisTeam\ADOL\Entity\WatchDog;
+namespace AsisTeam\ADOL\Entity\WatchDog\Property;
 
 use AsisTeam\ADOL\Exception\InvalidArgumentException;
 
-class Realty implements IEstate
+class Estate implements IEstate
 {
 
 	public const VALID_ESTATES = [Land::TYPE, Building::TYPE, BuildingUnit::TYPE];
@@ -26,7 +26,7 @@ class Realty implements IEstate
 	/** @var string|null */
 	protected $name;
 
-	/** @var string|null */
+	/** @var string */
 	protected $estateType;
 
 	/** @var int|null */
@@ -163,7 +163,7 @@ class Realty implements IEstate
 		$this->name = $name;
 	}
 
-	public function getEstateType(): ?string
+	public function getEstateType(): string
 	{
 		return $this->estateType;
 	}

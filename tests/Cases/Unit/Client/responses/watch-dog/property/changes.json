@@ -1,0 +1,47 @@
+{
+  "status": true,
+  "changes": [
+    {
+      "name": "Nazev zmeneneho zaznamu",
+      "subject" : "restrict",
+      "type": "added",
+      "timeCreated": "17.5.2015",
+      "timeChange": "2018-12-06 12:35:44",
+      "record": {
+        "id": "108216",
+        "timeCreated": "27.12.2018",
+        "title": "Budova č.e.17 v obci Zámostí-Blata  (část Blata)",
+        "name": "",
+        "lv": "",
+        "status": "Probíhá ověřování",
+        "estate": {
+          "typeEstate": "building",
+          "estateId": 297028604,
+          "villagePart": "146064",
+          "typeHomeNumber": 1,
+          "homeNumber": 17
+        },
+        "owners": [],
+        "procedures": [],
+        "restricts": [],
+        "dataMd": {
+          "task": "url_stavba",
+          "castObce": "146064",
+          "obec": "549193",
+          "ce": 17
+        },
+        "cadastralUrl": "http://abor.adol.cz/adapter/KatastrAdapter.html?typ=budova&id=297028604&hmac=6f0da7cc9c913fcc94ad8672b4b210d487cdbd9f",
+        "activeProcedures": [
+          ""
+        ],
+        "shortNotes": [],
+        "isNew": true,
+        "villagePart": "Blata (146064)",
+        "city": "Zámostí-Blata",
+        "typeEstate": "",
+        "typeHomeNumber": "č.e.",
+        "changes": []
+      }
+    }
+  ]
+}
