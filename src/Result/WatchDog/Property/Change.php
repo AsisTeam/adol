@@ -66,9 +66,9 @@ final class Change
 		$this->name        = $name;
 		$this->subject     = $subject;
 		$this->type        = $type;
-		$this->record      = $record;
 		$this->timeCreated = $timeCreated;
 		$this->timeChange  = $timeChange;
+		$this->record      = $record;
 	}
 
 	public function getName(): string

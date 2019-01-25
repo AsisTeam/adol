@@ -14,13 +14,13 @@ use DateTimeImmutable;
 final class PropertyClient extends AbstractClient
 {
 
-	private const API = '/papi/property-watchdog';
+	private const API = '/papi/property-watchdog/';
 
-	private const PATH_LIST = '/list';
-	private const PATH_INSERT = '/insert';
-	private const PATH_DELETE = '/remove';
-	private const PATH_DETAIL = '/detail';
-	private const PATH_CHANGES = '/changes';
+	private const PATH_LIST = 'list';
+	private const PATH_INSERT = 'insert';
+	private const PATH_DELETE = 'remove';
+	private const PATH_DETAIL = 'detail';
+	private const PATH_CHANGES = 'changes';
 
 	public function insert(IEstate $estate): Insertion
 	{
@@ -80,8 +80,8 @@ final class PropertyClient extends AbstractClient
 		}
 
 		$out = [];
-		foreach ($data['changes'] as $rec) {
-			$out[] = Change::fromArray($rec);
+		foreach ($data['changes'] as $ch) {
+			$out[] = Change::fromArray($ch);
 		}
 
 		return $out;

@@ -8,15 +8,15 @@ final class Building extends Estate implements IEstate
 	public const TYPE = 'building';
 
 	public static function create(
-		int $villagePart,
+		int $villagePartCode,
 		int $homeNumberType,
-		int $homeNumber
+		int $houseNumber
 	): IEstate
 	{
 		$b = new self(self::TYPE);
-		$b->setVillagePart($villagePart);
+		$b->setVillagePart($villagePartCode);
 		$b->setHomeNumberType($homeNumberType);
-		$b->setHomeNumber($homeNumber);
+		$b->setHomeNumber($houseNumber);
 
 		return $b;
 	}

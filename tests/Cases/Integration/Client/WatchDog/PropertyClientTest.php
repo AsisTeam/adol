@@ -3,7 +3,6 @@
 namespace AsisTeam\ADOL\Tests\Cases\Integration\Client\WatchDog;
 
 use AsisTeam\ADOL\Client\WatchDog\PropertyClient;
-use AsisTeam\ADOL\Entity\WatchDog\Property\Building;
 use AsisTeam\ADOL\Entity\WatchDog\Property\Estate;
 use AsisTeam\ADOL\Entity\WatchDog\Property\Land;
 use AsisTeam\ADOL\Tests\Cases\Integration\Client\AbstractTestCase;
@@ -47,16 +46,9 @@ class PropertyClientTest extends AbstractTestCase
 		$this->client->insert(Land::create(549193, Estate::EVIDENCE_PKN, true, 5));
 	}
 
-	public function testInsert(): void
-	{
-		$this->clearAll();
-		$insertion = $this->client->insert(Building::create(146064, Building::HOME_NUMBER_HOUSE, 17));
-		Assert::true((int) $insertion->getId() > 0);
-	}
-
 	public function testChanges(): void
 	{
-		$changes = $this->client->changes(new DateTimeImmutable('1980-01-01'));
+		$changes = $this->client->changes(new DateTimeImmutable('2018-01-01'));
 		Assert::count(0, $changes);
 	}
 
