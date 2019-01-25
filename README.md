@@ -30,14 +30,14 @@ composer require asisteam/adol
 ## Overview
 
 This package communicates with following ADOL APIs:
-- [Watchdog](https://github.com/AsisTeam/adol/blob/master/.docs/watchdog.md)
-- [Property](https://github.com/AsisTeam/adol/blob/master/.docs/property.md)
+- [Watchdog](https://github.com/AsisTeam/adol/blob/master/.docs/watchdog.md) (to be used for assigning watchdog items (insolvencies and estates) to watchdog and checking changes made on these items.)
+- [Property](https://github.com/AsisTeam/adol/blob/master/.docs/property.md) (to be used for retrieving detail information about property entities (lands/buildings/building units/persons))
 
-In order to communicate with ADOL APIs you must have your own private `token` string. This `token` is provided by ADOL.
+_Note: In order to communicate with ADOL APIs you must have your own private `token` string. This `token` is provided by ADOL._
 
 ### Basic principles
 
-For every provided API a separate client class is created (please see `WatchDogClient`, `Property/BuildingClient`, ...).
+For every provided API a separate client class is created (please see `Client/WatchDog/...`, `Client/Property/...`).
 In order to create the client, you must instantiate it by passing at least a valid `token` string to it's constructor.
 Or you can replace the default GuzzleHttp client with your custom http client that implements ClientInterface.
 If using GuzzleHttp client you can also pass a third optional constructor parameter, that is a request options array that will be appended to every request made by the http client.
@@ -63,7 +63,11 @@ and fill your private `token` and delete `Environment::skip` line in setUp() met
 
 You can configure clients as Nette Framework DI services and you will be able to use following services:
 
-- adol.watchdog
+__Watchdog API__
+- adol.watchdog.insolvency
+- adol.watchdog.property
+
+__Property API__
 - adol.property.land
 - adol.property.building
 - adol.property.building_unit
@@ -74,7 +78,7 @@ extensions:
     adol: AsisTeam\ADOL\Bridges\Nette\DI\AdolExtension
     
 adol:
-    token: "yourValidTokenString"
+    token: "your dedicated adol token"
     options: [
         timeout: 20 
     ]

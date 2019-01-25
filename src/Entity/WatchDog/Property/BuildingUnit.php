@@ -15,10 +15,10 @@ final class BuildingUnit extends Estate implements IEstate
 	): IEstate
 	{
 		$bu = new self(self::TYPE);
-		$bu->setVillagePart($villagePart);
-		$bu->setHomeNumberType($homeNumberType);
-		$bu->setHomeNumber($homeNumber);
-		$bu->setUnit($unit);
+		$bu->setVillagePart($villagePart); // kod casti obce
+		$bu->setHomeNumberType($homeNumberType); // typ domovniho cisla - enum Estate::HOME_NUMBER_XXX
+		$bu->setHomeNumber($homeNumber); // domovni cislo
+		$bu->setUnit($unit); // cislo jednotky
 
 		return $bu;
 	}

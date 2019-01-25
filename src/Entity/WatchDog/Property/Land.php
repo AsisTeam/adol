@@ -15,10 +15,10 @@ final class Land extends Estate implements IEstate
 	): IEstate
 	{
 		$land = new self(self::TYPE);
-		$land->setCadastralAreaCode($cadastralAreaCode);
-		$land->setEvidenceType($evidenceType);
-		$land->setIsBuildingLand($isBuildingLand);
-		$land->setKmenoveCislo($kmenoveCislo);
+		$land->setCadastralAreaCode($cadastralAreaCode); // Kód katastrálního území
+		$land->setEvidenceType($evidenceType); // Typ evidence parcely - enum Estate::EVIDENCE_PKN or Estate::EVIDENCE_PZE
+		$land->setIsBuildingLand($isBuildingLand); // Je stavební parcela?
+		$land->setKmenoveCislo($kmenoveCislo); // Číslo parcely před lomítkem
 
 		return $land;
 	}

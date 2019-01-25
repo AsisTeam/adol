@@ -34,11 +34,15 @@ class AdolExtension extends CompilerExtension
 
 		$params = [$config['token'], null, $config['options']];
 
+		// Watchdog
+
 		$builder->addDefinition($this->prefix('watchdog.property'))
 			->setFactory(PropertyClient::class, $params);
 
 		$builder->addDefinition($this->prefix('watchdog.insolvency'))
 			->setFactory(InsolvencyClient::class, $params);
+
+		// Property
 
 		$builder->addDefinition($this->prefix('property.land'))
 			->setFactory(LandClient::class, $params);

@@ -14,9 +14,9 @@ final class Building extends Estate implements IEstate
 	): IEstate
 	{
 		$b = new self(self::TYPE);
-		$b->setVillagePart($villagePartCode);
-		$b->setHomeNumberType($homeNumberType);
-		$b->setHomeNumber($houseNumber);
+		$b->setVillagePart($villagePartCode); // kod casti obce
+		$b->setHomeNumberType($homeNumberType); // typ domovniho cisla - enum Estate::HOME_NUMBER_XXX
+		$b->setHomeNumber($houseNumber); // domovni cislo
 
 		return $b;
 	}
