@@ -1,0 +1,233 @@
+{
+  "changes": [
+    {
+      "isir": "KSBR 38 INS 10347 / 2018",
+      "merge": false,
+      "part": "A",
+      "order": 1,
+      "subOrder": 0,
+      "timeCreated": "21.06.2018",
+      "mainDocId": 34151081,
+      "subDocId": "",
+      "creditor": "",
+      "description": "Insolvenční návrh spojený s návrhem na povolení oddlužení",
+      "mainDocUrl": "https://isir.justice.cz/isir/doc/dokument.PDF?id=34151081",
+      "record": {
+        "id": 56022,
+        "rc": "580519\/2228",
+        "ic": "",
+        "surname": "",
+        "name": "",
+        "dateBirth": "",
+        "address": "",
+        "insolvencies": [
+          {
+            "isir": "KSBR 38 INS 10347 \/ 2018",
+            "insolvencyCreated": "21.06.2018",
+            "rowId": "5FE9532E7331497BB27CF36883899AED",
+            "office": "Krajsk\u00fd soud v Brn\u011b",
+            "status": "Prohl\u00e1\u0161en\u00fd konkurs",
+            "subjects": [
+              {
+                "name": "Jaroslav Vav\u0159i\u010dka",
+                "ic": "",
+                "rc": "580519\/2228",
+                "dateBirth": "1958-05-19",
+                "address": "Zl\u00edn, Potoky 4315, PS\u010c 760 01"
+              }
+            ],
+            "administrators": [
+              {
+                "name": "Mgr. Pavla Rojarov\u00e1",
+                "address": "Uhersk\u00e9 Hradi\u0161t\u011b, Zeln\u00fd trh 1249, PS\u010c 686 01, Okres Uhersk\u00e9 Hradi\u0161t\u011b"
+              }
+            ],
+            "mergeRecord": [],
+            "insolvencyLastChange": "17.01.2019"
+          },
+          {
+            "isir": "KSBR 40 INS 2928 \/ 2018",
+            "insolvencyCreated": "21.02.2018",
+            "rowId": "DEA5D10729904E4B85ADE029667C1DE9",
+            "office": "Krajsk\u00fd soud v Brn\u011b",
+            "status": "Pravomocn\u00e1 v\u011bc",
+            "subjects": [
+              {
+                "name": "Jaroslav Vav\u0159i\u010dka",
+                "ic": "",
+                "rc": "580519\/2228",
+                "dateBirth": "1958-05-19",
+                "address": "Zl\u00edn, Potoky 4315, PS\u010c 760 01"
+              }
+            ],
+            "administrators": [],
+            "mergeRecord": [],
+            "insolvencyLastChange": "19.06.2018"
+          }
+        ],
+        "timeCreated": "25.01.2019",
+        "subjectsName": [
+          "Jaroslav Vav\u0159i\u010dka"
+        ],
+        "subjectsRc": [
+          "580519\/2228"
+        ],
+        "subjectsIc": [],
+        "subjectsDateBirth": []
+      }
+    },
+    {
+      "isir": "KSBR 38 INS 10347 \/ 2018",
+      "merge": false,
+      "part": "A",
+      "order": 2,
+      "subOrder": 0,
+      "timeCreated": "21.06.2018",
+      "mainDocId": 34151078,
+      "subDocId": "",
+      "creditor": "",
+      "description": "Vyhl\u00e1\u0161ka o zah\u00e1jen\u00ed insolven\u010dn\u00edho \u0159\u00edzen\u00ed",
+      "mainDocUrl": "https:\/\/isir.justice.cz\/isir\/doc\/dokument.PDF?id=34151078",
+      "record": {
+        "id": 56022,
+        "rc": "580519\/2228",
+        "ic": "",
+        "surname": "",
+        "name": "",
+        "dateBirth": "",
+        "address": "",
+        "insolvencies": [
+          {
+            "isir": "KSBR 38 INS 10347 \/ 2018",
+            "insolvencyCreated": "21.06.2018",
+            "rowId": "5FE9532E7331497BB27CF36883899AED",
+            "office": "Krajsk\u00fd soud v Brn\u011b",
+            "status": "Prohl\u00e1\u0161en\u00fd konkurs",
+            "subjects": [
+              {
+                "name": "Jaroslav Vav\u0159i\u010dka",
+                "ic": "",
+                "rc": "580519\/2228",
+                "dateBirth": "1958-05-19",
+                "address": "Zl\u00edn, Potoky 4315, PS\u010c 760 01"
+              }
+            ],
+            "administrators": [
+              {
+                "name": "Mgr. Pavla Rojarov\u00e1",
+                "address": "Uhersk\u00e9 Hradi\u0161t\u011b, Zeln\u00fd trh 1249, PS\u010c 686 01, Okres Uhersk\u00e9 Hradi\u0161t\u011b"
+              }
+            ],
+            "mergeRecord": [],
+            "insolvencyLastChange": "17.01.2019"
+          },
+          {
+            "isir": "KSBR 40 INS 2928 \/ 2018",
+            "insolvencyCreated": "21.02.2018",
+            "rowId": "DEA5D10729904E4B85ADE029667C1DE9",
+            "office": "Krajsk\u00fd soud v Brn\u011b",
+            "status": "Pravomocn\u00e1 v\u011bc",
+            "subjects": [
+              {
+                "name": "Jaroslav Vav\u0159i\u010dka",
+                "ic": "",
+                "rc": "580519\/2228",
+                "dateBirth": "1958-05-19",
+                "address": "Zl\u00edn, Potoky 4315, PS\u010c 760 01"
+              }
+            ],
+            "administrators": [],
+            "mergeRecord": [],
+            "insolvencyLastChange": "19.06.2018"
+          }
+        ],
+        "timeCreated": "25.01.2019",
+        "subjectsName": [
+          "Jaroslav Vav\u0159i\u010dka"
+        ],
+        "subjectsRc": [
+          "580519\/2228"
+        ],
+        "subjectsIc": [],
+        "subjectsDateBirth": []
+      }
+    },
+    {
+      "isir": "KSBR 38 INS 10347 \/ 2018",
+      "merge": false,
+      "part": "A",
+      "order": 3,
+      "subOrder": 0,
+      "timeCreated": "21.06.2018",
+      "mainDocId": 34152800,
+      "subDocId": "",
+      "creditor": "",
+      "description": "N\u00e1vrh - p\u0159\u00edlohy",
+      "mainDocUrl": "https:\/\/isir.justice.cz\/isir\/doc\/dokument.PDF?id=34152800",
+      "record": {
+        "id": 56022,
+        "rc": "580519\/2228",
+        "ic": "",
+        "surname": "",
+        "name": "",
+        "dateBirth": "",
+        "address": "",
+        "insolvencies": [
+          {
+            "isir": "KSBR 38 INS 10347 \/ 2018",
+            "insolvencyCreated": "21.06.2018",
+            "rowId": "5FE9532E7331497BB27CF36883899AED",
+            "office": "Krajsk\u00fd soud v Brn\u011b",
+            "status": "Prohl\u00e1\u0161en\u00fd konkurs",
+            "subjects": [
+              {
+                "name": "Jaroslav Vav\u0159i\u010dka",
+                "ic": "",
+                "rc": "580519\/2228",
+                "dateBirth": "1958-05-19",
+                "address": "Zl\u00edn, Potoky 4315, PS\u010c 760 01"
+              }
+            ],
+            "administrators": [
+              {
+                "name": "Mgr. Pavla Rojarov\u00e1",
+                "address": "Uhersk\u00e9 Hradi\u0161t\u011b, Zeln\u00fd trh 1249, PS\u010c 686 01, Okres Uhersk\u00e9 Hradi\u0161t\u011b"
+              }
+            ],
+            "mergeRecord": [],
+            "insolvencyLastChange": "17.01.2019"
+          },
+          {
+            "isir": "KSBR 40 INS 2928 \/ 2018",
+            "insolvencyCreated": "21.02.2018",
+            "rowId": "DEA5D10729904E4B85ADE029667C1DE9",
+            "office": "Krajsk\u00fd soud v Brn\u011b",
+            "status": "Pravomocn\u00e1 v\u011bc",
+            "subjects": [
+              {
+                "name": "Jaroslav Vav\u0159i\u010dka",
+                "ic": "",
+                "rc": "580519\/2228",
+                "dateBirth": "1958-05-19",
+                "address": "Zl\u00edn, Potoky 4315, PS\u010c 760 01"
+              }
+            ],
+            "administrators": [],
+            "mergeRecord": [],
+            "insolvencyLastChange": "19.06.2018"
+          }
+        ],
+        "timeCreated": "25.01.2019",
+        "subjectsName": [
+          "Jaroslav Vav\u0159i\u010dka"
+        ],
+        "subjectsRc": [
+          "580519\/2228"
+        ],
+        "subjectsIc": [],
+        "subjectsDateBirth": []
+      }
+    }
+  ],
+  "status": true
+}

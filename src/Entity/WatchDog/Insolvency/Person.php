@@ -15,12 +15,14 @@ final class Person extends Subject implements ISubject
 		?string $address = null
 	): ISubject
 	{
-		$ins = new self();
-		$ins->setPersonalId($personalId);
-		$ins->setName($name);
-		$ins->setSurname($surname);
-		$ins->setDateBirth($dateBirth);
-		$ins->setAddress($address);
+		$p = new self();
+		$p->setPersonalId($personalId);
+		$p->setName($name);
+		$p->setSurname($surname);
+		$p->setDateBirth($dateBirth);
+		$p->setAddress($address);
+
+		return $p;
 	}
 
 	public function isValid(): bool

@@ -1,0 +1,100 @@
+{
+  "maxCount": 1000,
+  "countSubjects": 3,
+  "records": [
+    {
+      "id": 56022,
+      "rc": "580519\/2228",
+      "ic": "",
+      "surname": "",
+      "name": "",
+      "dateBirth": "",
+      "address": "",
+      "insolvencies": [
+        {
+          "isir": "KSBR 38 INS 10347 / 2018",
+          "insolvencyCreated": "21.06.2018",
+          "rowId": "5FE9532E7331497BB27CF36883899AED",
+          "office": "Krajský soud v Brně",
+          "status": "Prohlášený konkurs",
+          "subjects": [
+            {
+              "name": "Jaroslav Vavřička",
+              "ic": "",
+              "rc": "580519/2228",
+              "dateBirth": "1958-05-19",
+              "address": "Zlín, Potoky 4315, PSČ 760 01"
+            }
+          ],
+          "administrators": [
+            {
+              "name": "Mgr. Pavla Rojarová",
+              "address": "Uherské Hradiště, Zelný trh 1249, PSČ 686 01, Okres Uherské Hradiště"
+            }
+          ],
+          "mergeRecord": [],
+          "insolvencyLastChange": "17.01.2019"
+        },
+        {
+          "isir": "KSBR 40 INS 2928 / 2018",
+          "insolvencyCreated": "21.02.2018",
+          "rowId": "DEA5D10729904E4B85ADE029667C1DE9",
+          "office": "Krajský soud v Brně",
+          "status": "Pravomocná věc",
+          "subjects": [
+            {
+              "name": "Jaroslav Vavřička",
+              "ic": "",
+              "rc": "580519/2228",
+              "dateBirth": "1958-05-19",
+              "address": "Zlín, Potoky 4315, PSČ 760 01"
+            }
+          ],
+          "administrators": [],
+          "mergeRecord": [],
+          "insolvencyLastChange": "19.06.2018"
+        }
+      ],
+      "timeCreated": "25.01.2019",
+      "subjectsName": [
+        "Jaroslav Vavřička"
+      ],
+      "subjectsRc": [
+        "580519/2228"
+      ],
+      "subjectsIc": [],
+      "subjectsDateBirth": []
+    },
+    {
+      "id": 56021,
+      "rc": "880412\/3466",
+      "ic": "",
+      "surname": "Testovic",
+      "name": "Test",
+      "dateBirth": "",
+      "address": "",
+      "insolvencies": [],
+      "timeCreated": "25.01.2019",
+      "subjectsName": [],
+      "subjectsRc": [],
+      "subjectsIc": [],
+      "subjectsDateBirth": []
+    },
+    {
+      "id": 56003,
+      "rc": "",
+      "ic": "25581431",
+      "surname": "",
+      "name": "PSJ INVEST,a.s",
+      "dateBirth": "",
+      "address": "",
+      "insolvencies": [],
+      "timeCreated": "24.01.2019",
+      "subjectsName": [],
+      "subjectsRc": [],
+      "subjectsIc": [],
+      "subjectsDateBirth": []
+    }
+  ],
+  "status": true
+}

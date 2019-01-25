@@ -6,8 +6,8 @@ use AsisTeam\ADOL\Client\AbstractClient;
 use AsisTeam\ADOL\Entity\WatchDog\Property\IEstate;
 use AsisTeam\ADOL\Exception\RequestException;
 use AsisTeam\ADOL\Exception\ResponseException;
-use AsisTeam\ADOL\Result\WatchDog\Change;
-use AsisTeam\ADOL\Result\WatchDog\Insertion;
+use AsisTeam\ADOL\Result\WatchDog\Property\Change;
+use AsisTeam\ADOL\Result\WatchDog\Property\Insertion;
 use AsisTeam\ADOL\Result\WatchDog\Property\Record;
 use DateTimeImmutable;
 

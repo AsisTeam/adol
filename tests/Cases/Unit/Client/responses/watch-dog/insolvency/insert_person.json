@@ -1,0 +1,19 @@
+{
+  "status": true,
+  "record": {
+    "id": 56021,
+    "rc": "880412/3466",
+    "ic": null,
+    "surname": "Testovic",
+    "name": "Test",
+    "dateBirth": "",
+    "address": null,
+    "insolvencies": [],
+    "timeCreated": "25.01.2019",
+    "subjectsName": [],
+    "subjectsRc": [],
+    "subjectsIc": [],
+    "subjectsDateBirth": [],
+    "changes": []
+  }
+}

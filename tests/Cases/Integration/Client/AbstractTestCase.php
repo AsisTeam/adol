@@ -9,7 +9,7 @@ abstract class AbstractTestCase extends TestCase
 {
 
 	/** @var string */
-	protected $token = 'fill your token';
+	protected $token = 'TOKEN';
 
 	public function setUp(): void
 	{

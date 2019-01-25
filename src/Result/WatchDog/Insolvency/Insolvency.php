@@ -26,9 +26,6 @@ final class Insolvency
 	/** @var string|null */
 	private $status;
 
-	/** @var Detail|null */
-	private $detail;
-
 	/** @var Subject[] */
 	private $subjects = [];
 
@@ -49,9 +46,6 @@ final class Insolvency
 		$ins->rowId = $data['rowId'] ?? null;
 		$ins->office = $data['office'] ?? null;
 		$ins->status = $data['status'] ?? null;
-
-		// TODO - check the field name
-		$ins->detail = isset($data['record']) ? Detail::fromArray($data['record']) : null;
 
 		$ins->created = isset($data['insolvencyCreated']) ? new DateTimeImmutable($data['insolvencyCreated']) : null;
 		$ins->lastChange = isset($data['insolvencyLastChange']) ? new DateTimeImmutable($data['insolvencyLastChange']) : null;
@@ -141,16 +135,6 @@ final class Insolvency
 	public function setStatus(?string $status): void
 	{
 		$this->status = $status;
-	}
-
-	public function getDetail(): ?Detail
-	{
-		return $this->detail;
-	}
-
-	public function setDetail(?Detail $detail): void
-	{
-		$this->detail = $detail;
 	}
 
 	/**

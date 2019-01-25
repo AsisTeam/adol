@@ -4,7 +4,7 @@ namespace AsisTeam\ADOL\Result\WatchDog\Insolvency;
 
 use DateTimeImmutable;
 
-final class Detail
+final class Change
 {
 
 	/** @var string|null */
@@ -38,29 +38,40 @@ final class Detail
 	private $subDocUrl;
 
 	/** @var string|null */
+	private $creditor;
+
+	/** @var string|null */
 	private $description;
+
+	/** @var Record|null */
+	private $record;
 
 	/**
 	 * @param mixed[] $data
 	 */
 	public static function fromArray(array $data): self
 	{
-		$d = new Detail();
+		$ch = new Change();
 
-		$d->isir        = $data['isir'] ?? null;
-		$d->merge       = $data['merge'] ?? null;
-		$d->part        = $data['part'] ?? null;
-		$d->description = $data['description'] ?? null;
-		$d->order       = $data['order'] ?? null;
-		$d->subOrder    = $data['subOrder'] ?? null;
-		$d->mainDocId   = $data['mainDocId'] ?? null;
-		$d->mainDocUrl  = $data['mainDocUrl'] ?? null;
-		$d->subDocId    = $data['subDocId'] ?? null;
-		$d->subDocUrl   = $data['subDocUrl'] ?? null;
+		$ch->isir        = $data['isir'] ?? null;
+		$ch->merge       = $data['merge'] ?? null;
+		$ch->part        = $data['part'] ?? null;
+		$ch->description = $data['description'] ?? null;
+		$ch->creditor    = $data['creditor'] ?? null;
+		$ch->order       = isset($data['order']) ? (int) $data['order'] : null;
+		$ch->subOrder    = isset($data['subOrder']) ? (int) $data['subOrder'] : null;
+		$ch->mainDocId   = isset($data['mainDocId']) ? (int) $data['mainDocId'] : null;
+		$ch->mainDocUrl  = $data['mainDocUrl'] ?? null;
+		$ch->subDocId    = isset($data['subDocId']) ? (int) $data['subDocId'] : null;
+		$ch->subDocUrl   = $data['subDocUrl'] ?? null;
 
-		$d->created = isset($data['timeCreated']) ? new DateTimeImmutable($data['timeCreated']) : null;
+		$ch->created = isset($data['timeCreated']) ? new DateTimeImmutable($data['timeCreated']) : null;
 
-		return $d;
+		if (isset($data['record'])) {
+			$ch->record = Record::fromArray($data['record']);
+		}
+
+		return $ch;
 	}
 
 	public function getIsir(): ?string
@@ -116,6 +127,16 @@ final class Detail
 	public function getDescription(): ?string
 	{
 		return $this->description;
+	}
+
+	public function getCreditor(): ?string
+	{
+		return $this->creditor;
+	}
+
+	public function getRecord(): ?Record
+	{
+		return $this->record;
 	}
 
 }

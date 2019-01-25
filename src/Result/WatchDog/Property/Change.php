@@ -1,9 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace AsisTeam\ADOL\Result\WatchDog;
+namespace AsisTeam\ADOL\Result\WatchDog\Property;
 
 use AsisTeam\ADOL\Exception\InvalidArgumentException;
-use AsisTeam\ADOL\Result\WatchDog\Property\Record;
 use DateTimeImmutable;
 
 final class Change

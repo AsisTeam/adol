@@ -2,6 +2,7 @@
 
 namespace AsisTeam\ADOL\Result\WatchDog\Insolvency;
 
+use AsisTeam\ADOL\Exception\LogicalException;
 use DateTimeImmutable;
 
 final class Record
@@ -49,6 +50,9 @@ final class Record
 	/** @var Insolvency[] */
 	private $insolvencies = [];
 
+	/** @var Change[] */
+	private $changes = [];
+
 	/**
 	 * @param mixed[] $data
 	 */
@@ -57,13 +61,14 @@ final class Record
 		$rec = new self();
 
 		$rec->raw        = $data;
-		$rec->id         = $data['id'] ?? null;
+		$rec->id         = isset($data['id']) ? (string) $data['id'] : null;
 		$rec->personalId = $data['rc'] ?? null;
 		$rec->companyId  = $data['ic'] ?? null;
 		$rec->surname    = $data['surname'] ?? null;
 		$rec->name       = $data['name'] ?? null;
 		$rec->address    = $data['address'] ?? null;
 		$rec->birthDate  = isset($data['dateBirth']) ? new DateTimeImmutable($data['dateBirth']) : null;
+		$rec->created    = isset($data['timeCreated']) ? new DateTimeImmutable($data['timeCreated']) : null;
 
 		$rec->subjectNames = $data['subjectsName'] ?? [];
 		$rec->subjectPersonalIds = $data['subjectsRc'] ?? [];
@@ -76,7 +81,40 @@ final class Record
 			}
 		}
 
+		if (isset($data['changes']) && is_array($data['changes'])) {
+			foreach ($data['changes'] as $ch) {
+				$rec->changes[] = Change::fromArray($ch);
+			}
+		}
+
 		return $rec;
+	}
+
+	public function isCompany(): bool
+	{
+		$this->validate();
+
+		return $this->companyId !== null;
+	}
+
+	public function isPerson(): bool
+	{
+		$this->validate();
+
+		return $this->personalId !== null;
+	}
+
+	public function validate(): void
+	{
+		if ($this->companyId === null && $this->personalId === null) {
+			throw new LogicalException('Record subject is not either company or person.');
+		}
+
+		if ($this->companyId !== null && $this->personalId !== null) {
+			throw new LogicalException('Record subject cannot be company and subject combined.');
+		}
+
+		// either companyId or personalId is set -> valid
 	}
 
 	/**
@@ -165,6 +203,14 @@ final class Record
 	public function getInsolvencies(): array
 	{
 		return $this->insolvencies;
+	}
+
+	/**
+	 * @return Change[]
+	 */
+	public function getChanges(): array
+	{
+		return $this->changes;
 	}
 
 }

@@ -6,23 +6,22 @@ use AsisTeam\ADOL\Client\AbstractClient;
 use AsisTeam\ADOL\Entity\WatchDog\Insolvency\ISubject;
 use AsisTeam\ADOL\Exception\RequestException;
 use AsisTeam\ADOL\Exception\ResponseException;
-use AsisTeam\ADOL\Result\WatchDog\Change;
-use AsisTeam\ADOL\Result\WatchDog\Insertion;
+use AsisTeam\ADOL\Result\WatchDog\Insolvency\Change;
 use AsisTeam\ADOL\Result\WatchDog\Insolvency\Record;
 use DateTimeImmutable;
 
 final class InsolvencyClient extends AbstractClient
 {
 
-	private const API = '/papi/insolvency-watchdog';
+	private const API = '/papi/insolvency-watchdog/';
 
-	private const PATH_LIST = '/list';
-	private const PATH_INSERT = '/insert';
-	private const PATH_DELETE = '/remove';
-	private const PATH_DETAIL = '/detail';
-	private const PATH_CHANGES = '/changes';
+	private const PATH_LIST = 'list';
+	private const PATH_INSERT = 'insert';
+	private const PATH_DELETE = 'remove';
+	private const PATH_DETAIL = 'detail';
+	private const PATH_CHANGES = 'changes';
 
-	public function insert(ISubject $insolvency): Insertion
+	public function insert(ISubject $insolvency): Record
 	{
 		if ($insolvency->isValid() === false) {
 			throw new RequestException('Trying to insert invalid insolvency. please check it\'s mandatory fields.');
@@ -30,7 +29,11 @@ final class InsolvencyClient extends AbstractClient
 
 		$data = $this->request('POST', $this->getUrl(self::PATH_INSERT), ['form_params' => $insolvency->toArray()]);
 
-		return Insertion::fromArray($data);
+		if (!array_key_exists('record', $data)) {
+			throw new ResponseException('Missing "record key" in response');
+		}
+
+		return Record::fromArray($data['record']);
 	}
 
 	/**
@@ -40,7 +43,7 @@ final class InsolvencyClient extends AbstractClient
 	{
 		$data = $this->request('POST', $this->getUrl(self::PATH_LIST), ['form_params' => ['page' => $page, 'limit' => $limit]]);
 
-		if (!array_key_exists('insolvencies', $data)) {
+		if (!array_key_exists('records', $data)) {
 			throw new ResponseException('Missing "records" field in "list" response');
 		}
 

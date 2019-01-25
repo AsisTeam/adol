@@ -3,7 +3,6 @@
 namespace AsisTeam\ADOL\Result\WatchDog\Property;
 
 use AsisTeam\ADOL\Entity\WatchDog\Property\Estate;
-use AsisTeam\ADOL\Result\WatchDog\Change;
 use DateTimeImmutable;
 
 final class Record
